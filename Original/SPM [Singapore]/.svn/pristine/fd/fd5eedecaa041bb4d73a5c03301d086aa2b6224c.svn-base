@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="SPMWebServiceApp.WebServices.AssignmentManagement">
+    <Position X="0.5" Y="0.5" Width="5.5" />
+    <Members>
+      <Method Name="BatchDeleteClientAssignment" Hidden="true" />
+      <Method Name="DeleteClientAssignment" Hidden="true" />
+      <Method Name="GetClientInfoByAccNo" Hidden="true" />
+      <Method Name="InsertAssignment" Hidden="true" />
+      <Method Name="InsertEmailLog" Hidden="true" />
+      <Method Name="InsertProjectAttachment" Hidden="true" />
+      <Method Name="InsertProjectInfo" Hidden="true" />
+      <Method Name="PrepareForAssignedClientInfo" Hidden="true" />
+      <Method Name="RetrieveAccountTypeValues" Hidden="true" />
+      <Method Name="RetrieveAllDealer" Hidden="true" />
+      <Method Name="RetrieveAllProjectInformation" Hidden="true" />
+      <Method Name="RetrieveAssignedClientInfo" Hidden="true" />
+      <Method Name="RetrieveAssignedClientInfoByProj" Hidden="true" />
+      <Method Name="RetrieveAssignedProjectByUserId" Hidden="true" />
+      <Method Name="RetrieveAssignmentDateByDateRange" Hidden="true" />
+      <Method Name="RetrieveAssignmentHistoryByCriteria" Hidden="true" />
+      <Method Name="RetrieveAssignmentHistoryByProjName" Hidden="true" />
+      <Method Name="RetrieveAssignReportByDealer" Hidden="true" />
+      <Method Name="RetrieveAssignReportByFollowUpDate" Hidden="true" />
+      <Method Name="RetrieveClientsForAssignment" Hidden="true" />
+      <Method Name="RetrieveCommissionEarnedHistoryByCriteria" Hidden="true" />
+      <Method Name="RetrieveCommissionEarnedHistoryByProject" Hidden="true" />
+      <Method Name="RetrieveCrossEnabledDealer" Hidden="true" />
+      <Method Name="RetrieveCrossEnabledTeam" Hidden="true" />
+      <Method Name="RetrieveDealerAndTeamForAssignment" Hidden="true" />
+      <Method Name="RetrieveDealerByTeamCodeForAssignment" Hidden="true" />
+      <Method Name="RetrieveDealerEmailByDelaerCode" Hidden="true" />
+      <Method Name="RetrieveFollowUpDateByProjectID" Hidden="true" />
+      <Method Name="RetrieveProjectAttachment" Hidden="true" />
+      <Method Name="RetrieveProjectByProjectName" Hidden="true" />
+      <Method Name="RetrieveTeamEmailByTeamCode" Hidden="true" />
+      <Method Name="RetrieveTeamsForAssignment" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>PUAAgQgAAAAAIAYgBACAAEAARUEAAgRAAAwQDAAgoAQ=</HashCode>
+      <FileName>WebServices\AssignmentManagement.asmx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SPMWebServiceApp.WebServices.CommonSPMService">
+    <Position X="6.5" Y="0.5" Width="5.75" />
+    <Members>
+      <Method Name="DeleteEmailTemplate" Hidden="true" />
+      <Method Name="getAccessRight" Hidden="true" />
+      <Method Name="InsertEmailTemplate" Hidden="true" />
+      <Method Name="RetrieveAllDealer" Hidden="true" />
+      <Method Name="RetrieveAllProjectByProjectName" Hidden="true" />
+      <Method Name="RetrieveAllTeamCodeAndName" Hidden="true" />
+      <Method Name="RetrieveDealerCodeAndNameByTeam" Hidden="true" />
+      <Method Name="RetrieveDealerCodeAndNameByUserID" Hidden="true" />
+      <Method Name="RetrieveEmailTemplate" Hidden="true" />
+      <Method Name="RetrieveEmailTemplateByID" Hidden="true" />
+      <Method Name="RetrieveMultipleDealerCodeAndNameByTeam" Hidden="true" />
+      <Method Name="RetrievePreferenceCodeAndName" Hidden="true" />
+      <Method Name="RetrieveTeamAndNameByDealerCode" Hidden="true" />
+      <Method Name="RetrieveTeamCodeAndName" Hidden="true" />
+      <Method Name="RetrieveTeamCodeAndNameBySeries" Hidden="true" />
+      <Method Name="RetrieveTotalCommissionForUserId" Hidden="true" />
+      <Method Name="UpdateEmailTemplate" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ABBAACAAAgAAAhAACEAAAAAAAAAJYBDgAAAAAAAgCAA=</HashCode>
+      <FileName>WebServices\CommonSPMService.asmx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SPMWebServiceApp.Services.ClientAssignmentService">
+    <Position X="1.25" Y="2.25" Width="3" />
+    <Members>
+      <Method Name="BatchDeleteClientAssignment" Hidden="true" />
+      <Method Name="ClientAssignmentService" Hidden="true" />
+      <Method Name="DeleteClientAssignment" Hidden="true" />
+      <Method Name="GetCommissionEarnedTable" Hidden="true" />
+      <Method Name="InsertAssignment" Hidden="true" />
+      <Method Name="InsertEmailLog" Hidden="true" />
+      <Method Name="InsertProjectAttachment" Hidden="true" />
+      <Method Name="InsertProjectInfo" Hidden="true" />
+      <Method Name="PrepareForAssignedClientInfo" Hidden="true" />
+      <Method Name="RetrieveAccountTypeValues" Hidden="true" />
+      <Method Name="RetrieveAllDealer" Hidden="true" />
+      <Method Name="RetrieveAllProjectInformation" Hidden="true" />
+      <Method Name="RetrieveAssignedClientInfo" Hidden="true" />
+      <Method Name="RetrieveAssignedClientInfoByProj" Hidden="true" />
+      <Method Name="RetrieveAssignedProjectByUserId" Hidden="true" />
+      <Method Name="RetrieveAssignmentDateByDateRange" Hidden="true" />
+      <Method Name="RetrieveAssignmentHistoryByCriteria" Hidden="true" />
+      <Method Name="RetrieveAssignmentHistoryByProjName" Hidden="true" />
+      <Method Name="RetrieveAssignReportByDealer" Hidden="true" />
+      <Method Name="RetrieveAssignReportByFollowUpDate" Hidden="true" />
+      <Method Name="RetrieveClientsForAssignment" Hidden="true" />
+      <Method Name="RetrieveCommissionEarnedHistoryByCriteria" Hidden="true" />
+      <Method Name="RetrieveCommissionEarnedHistoryByProjName" Hidden="true" />
+      <Method Name="RetrieveCrossEnabledDealer" Hidden="true" />
+      <Method Name="RetrieveCrossEnabledTeam" Hidden="true" />
+      <Method Name="RetrieveDealerAndTeamForAssignment" Hidden="true" />
+      <Method Name="RetrieveDealerByTeamCodeForAssignment" Hidden="true" />
+      <Method Name="RetrieveDealerEmailByDelaerCode" Hidden="true" />
+      <Method Name="RetrieveFollowUpDateByProjectID" Hidden="true" />
+      <Method Name="RetrieveProjectAttachment" Hidden="true" />
+      <Method Name="RetrieveProjectByProjectName" Hidden="true" />
+      <Method Name="RetrieveProjectType" Hidden="true" />
+      <Method Name="RetrieveTeamEmailByTeamCode" Hidden="true" />
+      <Method Name="RetrieveTeamsForAssignment" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>PUAAgQgAAAAAIAYgBQCoAEAAQUEAAA5AAAwUDIEgtAU=</HashCode>
+      <FileName>Services\ClientAssignmentService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SPMWebServiceApp.Services.CommonService">
+    <Position X="5" Y="2.25" Width="4.5" />
+    <Members>
+      <Method Name="getAccessRight" Hidden="true" />
+      <Method Name="RetrieveAllDealer" Hidden="true" />
+      <Method Name="RetrieveAllProjectByProjectName" Hidden="true" />
+      <Method Name="RetrieveAllTeamCodeAndName" Hidden="true" />
+      <Method Name="RetrieveDealerCodeAndNameByTeam" Hidden="true" />
+      <Method Name="RetrieveDealerCodeAndNameByUserID" Hidden="true" />
+      <Method Name="RetrieveMultipleDealerCodeAndNameByTeam" Hidden="true" />
+      <Method Name="RetrievePreferenceCodeAndName" Hidden="true" />
+      <Method Name="RetrieveTeamAndNameByDealerCode" Hidden="true" />
+      <Method Name="RetrieveTeamCodeAndName" Hidden="true" />
+      <Method Name="RetrieveTeamCodeAndNameBySeries" Hidden="true" />
+      <Method Name="RetrieveTotalCommissionForUserId" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ADhAACAAAAAAEgAAiEAAAAAAAAAJYBDgAAAAAAAABAA=</HashCode>
+      <FileName>Services\CommonService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SPMWebServiceApp.DataAccess.ClientAssignmentDA">
+    <Position X="0.75" Y="6.5" Width="4.25" />
+    <Members>
+      <Method Name="BatchDeleteClientAssignment" Hidden="true" />
+      <Method Name="DeleteClientAssignment" Hidden="true" />
+      <Method Name="GenerateProjectID" Hidden="true" />
+      <Method Name="GetFollowUpQuery" Hidden="true" />
+      <Method Name="InsertAssignment" Hidden="true" />
+      <Method Name="InsertEmailLog" Hidden="true" />
+      <Method Name="InsertProjectAttachment" Hidden="true" />
+      <Method Name="InsertProjectInfo" Hidden="true" />
+      <Method Name="RetrieveAccountTypeValues" Hidden="true" />
+      <Method Name="RetrieveAllProjectInfo" Hidden="true" />
+      <Method Name="RetrieveAssignedClientInfo" Hidden="true" />
+      <Method Name="RetrieveAssignedClientInfoByProj" Hidden="true" />
+      <Method Name="RetrieveAssignedLeadInfoByProj" Hidden="true" />
+      <Method Name="RetrieveAssignedProjectByUserId" Hidden="true" />
+      <Method Name="RetrieveAssignmentDateByDateRange" Hidden="true" />
+      <Method Name="RetrieveAssignmentForExtraCall" Hidden="true" />
+      <Method Name="RetrieveAssignmentHistoryByCriteria" Hidden="true" />
+      <Method Name="RetrieveAssignmentHistoryByLeadProjName" Hidden="true" />
+      <Method Name="RetrieveAssignmentHistoryByProjName" Hidden="true" />
+      <Method Name="RetrieveAssignReportByDealer" Hidden="true" />
+      <Method Name="RetrieveAssignReportByFollowUpDate" Hidden="true" />
+      <Method Name="RetrieveClientsForAssignment" Hidden="true" />
+      <Method Name="RetrieveCommissionEarnedHistoryByCriteria" Hidden="true" />
+      <Method Name="RetrieveCommissionEarnedHistoryByProjName" Hidden="true" />
+      <Method Name="RetrieveContactEntryProjectInfo" Hidden="true" />
+      <Method Name="RetrieveCrossEnabledDealer" Hidden="true" />
+      <Method Name="RetrieveCrossEnabledTeam" Hidden="true" />
+      <Method Name="RetrieveFollowUpDateByProjectID" Hidden="true" />
+      <Method Name="RetrieveProjectAttachment" Hidden="true" />
+      <Method Name="RetrieveProjectByProjectName" Hidden="true" />
+      <Method Name="RetrieveProjectType" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>JUAABQgAAAEAIAIgBgCAAEAAQEEAACQAAAyUDIAApAU=</HashCode>
+      <FileName>DataAccess\ClientAssignmentDA.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SPMWebServiceApp.DataAccess.CommonServiceDA">
+    <Position X="5.25" Y="6.5" Width="4.5" />
+    <Members>
+      <Method Name="dtRetrieveDealerCodeAndNameByUserID" Hidden="true" />
+      <Method Name="getAccessRight" Hidden="true" />
+      <Method Name="RetrieveAllDealer" Hidden="true" />
+      <Method Name="RetrieveAllProjectByProjectName" Hidden="true" />
+      <Method Name="RetrieveAllTeamCodeAndName" Hidden="true" />
+      <Method Name="RetrieveCrossEnableDealer" Hidden="true" />
+      <Method Name="RetrieveDealerCodeAndNameByTeam" Hidden="true" />
+      <Method Name="RetrieveDealerCodeAndNameByUserID" Hidden="true" />
+      <Method Name="RetrieveMultipleDealerCodeAndNameByTeam" Hidden="true" />
+      <Method Name="RetrievePreferenceCodeAndName" Hidden="true" />
+      <Method Name="RetrieveTeamAndNameByDealerCode" Hidden="true" />
+      <Method Name="RetrieveTeamCodeAndName" Hidden="true" />
+      <Method Name="RetrieveTeamCodeAndNameByDataTable" Hidden="true" />
+      <Method Name="RetrieveTeamCodeAndNameByNonTSeries" Hidden="true" />
+      <Method Name="RetrieveTeamCodeAndNameByTSeries" Hidden="true" />
+      <Method Name="RetrieveTotalCommissionForUserId" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ABBAAAAAAAAAAgIAKEAIAEAAAAAJYBDgAgAAAAAABAA=</HashCode>
+      <FileName>DataAccess\CommonServiceDA.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

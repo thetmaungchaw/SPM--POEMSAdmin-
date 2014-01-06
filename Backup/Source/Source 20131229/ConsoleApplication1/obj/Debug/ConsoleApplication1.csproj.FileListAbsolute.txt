@@ -1,0 +1,7 @@
+D:\OC\Project\SPM Phase IV (POEMSAdmin)\Source\ConsoleApplication1\obj\Debug\ResolveAssemblyReference.cache
+D:\OC\Project\SPM Phase IV (POEMSAdmin)\Source\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+D:\OC\Project\SPM Phase IV (POEMSAdmin)\Source\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+D:\OC\Project\SPM Phase IV (POEMSAdmin)\Source\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+D:\OC\Project\SPM Phase IV (POEMSAdmin)\Source\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+C:\OC\Project\SPM Phase IV (POEMSAdmin)\Backup\Source\Source 20131229\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+C:\OC\Project\SPM Phase IV (POEMSAdmin)\Backup\Source\Source 20131229\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb

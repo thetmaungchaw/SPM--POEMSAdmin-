@@ -1,0 +1,762 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using System.Collections.Generic;
+
+using SPMWebApp.BasePage;
+using SPMWebApp.Services;
+using SPMWebApp.Utilities;
+
+namespace SPMWebApp.WebPages.Setup
+{
+    public partial class DealerManagement : BasePage.BasePage
+    {
+        private DealerService dealerService;
+        //private CommonUtilities comUti;
+        //private string[] accessRight = new string[4];
+
+        /// <summary>
+        /// Fetch User Access Right
+        /// Call to ValidateUserAccessRight method with FunctionCode
+        /// </summary>        
+        private void LoadUserAccessRight()
+        {
+            List<AccessRight> accessRightList;
+            if (AccessRightUtilities.ValidateUserAccessRight((DataTable)Session["UserAccessRights"], "Management", out accessRightList))
+            {
+                foreach (AccessRight accessRight in accessRightList)
+                {
+                    switch (accessRight.accessRightType)
+                    {
+                        case AccessRightType.Create:
+                            {
+                                ViewState["CreateAccessRight"] = accessRight.hasAccessRight;
+                                break;
+                            }
+                        case AccessRightType.Modify:
+                            {
+                                ViewState["ModifyAccessRight"] = accessRight.hasAccessRight;
+                                break;
+                            }
+                        case AccessRightType.View:
+                            {
+                                ViewState["ViewAccessRight"] = accessRight.hasAccessRight;
+                                break;
+                            }
+                        case AccessRightType.Delete:
+                            {
+                                ViewState["DeleteAccessRight"] = accessRight.hasAccessRight;
+                                break;
+                            }
+                        default:
+                            {
+                                break;
+                            }
+                    }
+                }
+            }
+        }
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            //comUti = new CommonUtilities();
+            //accessRight = comUti.getAccessRight("Management", base.userLoginId, this.dbConnectionStr);
+           
+            if (!IsPostBack)
+            {
+                LoadUserAccessRight();
+
+                PrepareForDealerManagement();
+                btnUpdate.Visible = false;
+                btnCancel.Visible = false;
+                divPaging.Visible = false;
+
+                InitializeRowPerPageSetting();
+                ViewState["RowPerPage"] = 20;
+
+                checkAccessRight();
+
+                chkUserType.Checked = false;
+                Panel1.Enabled = false;
+            }
+
+            base.gvList = gvDealers;
+            base.divMessage = divMessage;
+            base.hdfModifyIndex = hdfModifyIndex;
+            base.pgcPagingControl = pgcDealer;
+        }
+
+        private void checkAccessRight()
+        {
+            try
+            {
+                btnAddDealer.Enabled = (bool)ViewState["CreateAccessRight"];
+                btnUpdate.Enabled = (bool)ViewState["ModifyAccessRight"];                
+            }
+            catch (Exception e) { } 
+
+            //if (accessRight[0] == "N")
+            //{
+            //    btnAddDealer.Enabled = false;
+            //}
+            //else
+            //{
+            //    btnAddDealer.Enabled = true;               
+            //}
+
+            //if (accessRight[2] == "N")
+            //{
+            //    btnUpdate.Enabled = false;
+            //}
+            //else
+            //{
+            //    btnUpdate.Enabled = true;
+            //}
+
+
+        }
+
+        protected override DataTable GetDataTable()
+        {
+            return ViewState["dtDealers"] as DataTable;
+        }
+
+        protected override void SetCurrentRowPerPage(int rowPerPage)
+        {
+            ViewState["RowPerPage"] = rowPerPage;
+        }
+
+        private void InitializeRowPerPageSetting()
+        {
+            //Setting for RowPerPage for Custom Paging Control
+            pgcDealer.StartRowPerPage = 10;
+            pgcDealer.RowPerPageIncrement = 10;
+            pgcDealer.EndRowPerPage = 100;
+        }
+
+        //For Paging Control
+        protected override void DisplayPaging()
+        {
+            if (divPaging.Visible)
+            {
+                int rowPerPage = (int)ViewState["RowPerPage"];
+
+                pgcDealer.PageCount = gvDealers.PageCount;
+                pgcDealer.CurrentRowPerPage = rowPerPage.ToString();
+                pgcDealer.DisplayPaging();
+            }
+        }
+
+
+        private void PrepareForDealerManagement()
+        {            
+            DataSet ds = null;
+
+            CommonService commonService = new CommonService(base.dbConnectionStr);
+            
+            //ds = commonService.RetrieveTeamCodeAndName();
+            ds = commonService.RetrieveAllTeamCodeAndName(base.userLoginId);
+
+            if (ds.Tables["ReturnTable"].Rows[0]["ReturnCode"].ToString() == "1")
+            {
+                ddlTeamCode.Items.Add(new ListItem("--- Select Team ---", ""));
+                for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                {
+                    ddlTeamCode.Items.Add(new ListItem(ds.Tables[0].Rows[i]["TeamName"].ToString(), ds.Tables[0].Rows[i]["TeamCode"].ToString()));
+                }
+            }
+
+            //gvDealers.DataSource = ds.Tables[0];
+            //gvDealers.DataBind();
+        }
+
+        protected override Hashtable RetrieveRecords()
+        {
+            dealerService = new DealerService(base.dbConnectionStr);
+            DataSet ds = null;
+            Hashtable ht = new Hashtable();
+            int enable = 1;
+            //string crossGroup = "N", supervisior = "N";
+            string crossGroup = "", supervisior = "";
+
+            ht.Add("ReturnData", null);
+            ht.Add("ReturnCode", "-1");
+            ht.Add("ReturnMessage", "");
+
+            if (!chkAssign.Checked)
+            {
+                enable = 0;
+            }
+
+            if (chkCrossGroup.Checked)
+            {
+                crossGroup = "Y";
+            }
+
+            //if (chkSupervisior.Checked)
+            //{
+            //    supervisior = "Y";
+            //}
+
+            if (chkUserType.Checked == true)
+            {
+                if (rdbtnAdministrator.Checked == true)
+                {
+                    supervisior = "Y";
+                }
+                else
+                {
+                    supervisior = "S";
+                }
+            }
+            
+            //ds = dealerService.RetrieveAllDealer();
+            
+            //to uncomment again
+            ds = dealerService.RetrieveDealerByCriteria(txtLoginId.Text.Trim(), txtDealerCode.Text.Trim(), txtDealerName.Text.Trim(),
+                    ddlTeamCode.SelectedValue, "", enable, crossGroup, supervisior, txtEmailID.Text.Trim(), base.userLoginId);
+
+            if (ds.Tables["ReturnTable"].Rows[0]["ReturnCode"].ToString() == "1")
+            {
+                //Add RecId as primary key.
+                ds.Tables[0].PrimaryKey = new DataColumn[] { ds.Tables[0].Columns["RecId"] };
+
+                ht["ReturnData"] = ds.Tables[0];
+                ViewState["dtDealers"] = ds.Tables[0];
+
+                ht["ReturnCode"] = ds.Tables["ReturnTable"].Rows[0]["ReturnCode"].ToString();
+
+                divPaging.Visible = true;
+                //InitializeRowPerPageSetting();
+            }
+            else
+            {
+                ViewState["dtDealers"] = null;
+                divPaging.Visible = false;
+            }
+
+            ht["ReturnMessage"] = ds.Tables["ReturnTable"].Rows[0]["ReturnMessage"].ToString();
+
+            return ht;
+        }
+
+        protected override void DisplayDetails(int modifyIndex)
+        {
+            btnAddDealer.Visible = false;
+            btnSearch.Visible = false;
+            btnUpdate.Visible = true;
+            btnCancel.Visible = true;
+
+            GridViewRow gvrModify = gvDealers.Rows[modifyIndex];
+            HiddenField gvhdfRecId = (HiddenField)gvrModify.FindControl("gvhdfRecId");
+            HiddenField gvhdfDisplayIndex = (HiddenField)gvrModify.FindControl("gvhdfDisplayIndex");
+            HiddenField gvhdfItemIndex = (HiddenField)gvrModify.FindControl("gvhdfItemIndex");
+
+            hdfRecId.Value = gvhdfRecId.Value;
+            txtDealerCode.Text = gvrModify.Cells[1].Text.Trim();
+            txtLoginId.Text = gvrModify.Cells[2].Text.Trim();
+            txtDealerName.Text = gvrModify.Cells[3].Text.Trim();
+
+            if ((gvrModify.Cells[4].Text.Trim().Equals("&nbsp;")))
+            {
+                txtEmailID.Text = "";
+            }
+            else
+            {
+                txtEmailID.Text = gvrModify.Cells[4].Text.Trim();
+            }            
+
+            //txtTeam.Text = gvrModify.Cells[4].Text.Trim();
+            ddlTeamCode.SelectedValue = gvrModify.Cells[5].Text.Trim();
+
+            //if (gvrModify.Cells[5].Text.Trim() != "&nbsp;")
+            //    txtAtsLogin.Text = gvrModify.Cells[5].Text.Trim();
+
+            // Added Alter AE Code by Win
+            if ((gvrModify.Cells[6].Text.Trim().Equals("&nbsp;")))
+            {
+                txtAltAECode.Text = "";
+            }
+            else
+            {
+                txtAltAECode.Text = gvrModify.Cells[6].Text.Trim();
+            }
+
+            chkAssign.Checked = true;
+            chkCrossGroup.Checked = false;
+            //chkSupervisior.Checked = false;
+            chkUserType.Checked = false;
+            if (gvrModify.Cells[7].Text.Trim().Equals("N"))
+            {
+                chkAssign.Checked = false;
+            }
+
+            if (gvrModify.Cells[8].Text.Trim().Equals("Y"))
+            {
+                chkCrossGroup.Checked = true;
+            }
+
+            if (gvrModify.Cells[9].Text.Trim().Equals("Y"))
+            {
+                /// <Updated by OC>
+                //chkSupervisior.Checked = true;
+                chkUserType.Checked = true;
+                Panel1.Enabled = true;
+                rdbtnAdministrator.Checked = true;
+                rdbtnSupervisor.Checked = false;
+            }
+            else if (gvrModify.Cells[9].Text.Trim().Equals("S"))
+            {
+                chkUserType.Checked = true;
+                Panel1.Enabled = true;
+                rdbtnSupervisor.Checked = true;
+                rdbtnAdministrator.Checked = false;
+            }
+            else
+            {
+                chkUserType.Checked = false;
+                Panel1.Enabled = false;
+            }
+
+            this.hdfModifyIndex.Value = gvhdfItemIndex.Value;
+            this.hdfDisplayIndex.Value = gvhdfDisplayIndex.Value;
+
+            txtDealerCode.Focus();            
+
+            //divMessage.InnerHtml = "Display Index : " + hdfDisplayIndex.Value;
+        }
+
+        protected override Hashtable DeleteRecord(int deleteIndex)
+        {
+            long deleteRecId = long.Parse(gvDealers.DataKeys[deleteIndex].Value.ToString());
+            HiddenField gvhdfItemIndex = (HiddenField)gvDealers.Rows[deleteIndex].FindControl("gvhdfItemIndex");
+            dealerService = new DealerService(base.dbConnectionStr);
+            Hashtable ht = new Hashtable();
+            DataTable dtDealers = null;
+            string[] wsReturn = null;
+
+            ht.Add("ReturnData", null);
+            
+            wsReturn = dealerService.DeleteDealer(deleteRecId);
+
+            if (wsReturn[0] == "1")
+            {
+                dtDealers = ViewState["dtDealers"] as DataTable;
+                dtDealers.Rows.RemoveAt(int.Parse(gvhdfItemIndex.Value));
+                ViewState["dtDealers"] = dtDealers;
+                ht["ReturnData"] = dtDealers;
+            }      
+
+            ht.Add("ReturnCode", wsReturn[0]);
+            ht.Add("ReturnMessage", wsReturn[1]);
+
+            this.ClearDealerForm();
+            btnAddDealer.Visible = true;
+            btnSearch.Visible = true;
+
+            btnUpdate.Visible = false;
+            btnCancel.Visible = false;
+
+            return ht;
+        }
+
+        protected void btnAddDealer_Click(object sender, EventArgs e)
+        {
+            dealerService = new DealerService(base.dbConnectionStr);
+            string[] wsReturn = null;
+            int enable = 1, insertedID = 1;
+            string crossGroup = "N", supervisior = "N", assign = "Y", validateResult = "";
+
+            if (!chkAssign.Checked)
+            {
+                enable = 0;
+                assign = "N";
+            }
+
+            if (chkCrossGroup.Checked)
+            {
+                crossGroup = "Y";
+            }
+
+            //if (chkSupervisior.Checked)
+            //{
+            //    supervisior = "Y";
+            //}
+
+            supervisior = CheckSupervisor();
+
+            validateResult = ValidateDealerForm();
+
+            if (String.IsNullOrEmpty(validateResult))
+            {
+                // to uncomment again
+                wsReturn = dealerService.InsertDealer(txtLoginId.Text.Trim(), txtDealerCode.Text.Trim(), txtDealerName.Text.Trim(), ddlTeamCode.SelectedValue,
+                            "", enable, crossGroup, supervisior, base.userLoginId, txtEmailID.Text.Trim(), txtAltAECode.Text.Trim());
+
+                if (wsReturn[0] == "1")
+                {
+                    DataTable dtDealers = ViewState["dtDealers"] as DataTable;
+
+                    if (dtDealers == null)
+                    {
+                        dtDealers = new DataTable("dtDealers");
+
+                        dtDealers.Columns.Add("RecId", String.Empty.GetType());
+                        dtDealers.Columns.Add("UserID", String.Empty.GetType());
+                        dtDealers.Columns.Add("AECode", String.Empty.GetType());
+                        dtDealers.Columns.Add("AEName", String.Empty.GetType());
+                        dtDealers.Columns.Add("AEGroup", String.Empty.GetType());
+                        dtDealers.Columns.Add("ATSLogin", String.Empty.GetType());
+                        dtDealers.Columns.Add("Enable", String.Empty.GetType());
+                        dtDealers.Columns.Add("CrossGroup", String.Empty.GetType());
+                        dtDealers.Columns.Add("Supervisor", String.Empty.GetType());
+                        dtDealers.Columns.Add("modifiedUser", String.Empty.GetType());
+                        dtDealers.Columns.Add("modifiedDate", typeof(DateTime));
+
+                        dtDealers.Columns.Add("OriginalAECode", String.Empty.GetType());
+                        dtDealers.Columns.Add("OriginalUserID", String.Empty.GetType());
+
+                        dtDealers.Columns.Add("Email", String.Empty.GetType());
+                        dtDealers.Columns.Add("AltAECode", String.Empty.GetType());
+
+                        //Create Primary Key
+                        dtDealers.PrimaryKey = new DataColumn[] {dtDealers.Columns["RecId"]};
+                    }
+
+                    DataRow drNewDealer = dtDealers.NewRow();
+
+                    drNewDealer["RecId"] = wsReturn[2];
+                    drNewDealer["UserID"] = txtLoginId.Text.Trim();
+                    drNewDealer["AECode"] = txtDealerCode.Text.Trim();
+                    drNewDealer["AEName"] = txtDealerName.Text.Trim();
+                    //drNewDealer["AEGroup"] = txtTeam.Text.Trim();
+                    drNewDealer["AEGroup"] = ddlTeamCode.SelectedValue;
+                    //drNewDealer["ATSLogin"] = txtAtsLogin.Text.Trim();
+                    drNewDealer["ATSLogin"] = "";
+                    drNewDealer["Enable"] = assign;
+                    drNewDealer["CrossGroup"] = crossGroup;
+                    drNewDealer["Supervisor"] = supervisior;
+                    drNewDealer["modifiedUser"] = base.userLoginId;
+                    drNewDealer["modifiedDate"] = DateTime.Now;
+
+                    drNewDealer["OriginalUserID"] = txtLoginId.Text.Trim();
+                    drNewDealer["OriginalAECode"] = txtDealerCode.Text.Trim();
+
+                    drNewDealer["Email"] = txtEmailID.Text.Trim();
+                    drNewDealer["AltAECode"] = txtAltAECode.Text.Trim();
+
+                    dtDealers.Rows.InsertAt(drNewDealer, 0);
+                    //dtDealers.Rows.Add(drNewDealer);
+
+                    ViewState["dtDealers"] = dtDealers;
+                    gvDealers.PageIndex = 0;
+                    gvDealers.DataSource = dtDealers;
+                    gvDealers.DataBind();
+
+                    this.ClearDealerForm();
+
+                    divPaging.Visible = true;
+                    DisplayPaging();
+                }
+
+                divMessage.InnerHtml = wsReturn[1];
+            }
+            else
+            {
+                divMessage.InnerHtml = validateResult;
+            }
+        }        
+
+        protected override Hashtable UpdateRecord(int modifyIndex)
+        {
+            dealerService = new DealerService(base.dbConnectionStr);
+            string[] wsReturn = null;
+            int enable = 1, displayIndex = 0;
+            string crossGroup = "N", supervisior = "N", assign = "Y", validateResult = "";
+            Hashtable ht = new Hashtable();
+            DataTable dtDealers = null;
+            DataRow drUpdate = null;
+
+            ht.Add("ReturnData", null);
+
+
+            dtDealers = ViewState["dtDealers"] as DataTable;
+            drUpdate = dtDealers.Rows.Find(hdfRecId.Value);
+
+            if (!chkAssign.Checked)
+            {
+                enable = 0;
+                assign = "N";
+            }
+
+            if (chkCrossGroup.Checked)
+            {
+                crossGroup = "Y";
+            }
+
+            //if (chkSupervisior.Checked)
+            //{
+            //    supervisior = "Y";
+            //}
+
+            supervisior = CheckSupervisor();
+
+            validateResult = ValidateDealerForm();
+
+            if (String.IsNullOrEmpty(validateResult))
+            {
+                //to uncomment again
+                wsReturn = dealerService.UpdateDealer(hdfRecId.Value, txtLoginId.Text.Trim(), txtDealerCode.Text.Trim(), txtDealerName.Text.Trim(),
+                           ddlTeamCode.SelectedValue, "", enable, crossGroup, supervisior, base.userLoginId,
+                           drUpdate["OriginalAECode"].ToString(), drUpdate["OriginalUserID"].ToString(), txtEmailID.Text.Trim(), txtAltAECode.Text.Trim());
+
+                if (wsReturn[0] == "1")
+                {
+                    btnAddDealer.Visible = true;
+                    btnSearch.Visible = true;
+
+                    btnUpdate.Visible = false;
+                    btnCancel.Visible = false;
+
+                    //Update in DataTable
+                    
+                    /*
+                    //Update Datatable with Item Index, it will not correct if GridView is sortable.
+                    dtDealers.Rows[modifyIndex].BeginEdit();
+                    dtDealers.Rows[modifyIndex]["UserID"] = txtLoginId.Text.Trim();
+                    dtDealers.Rows[modifyIndex]["AECode"] = txtDealerCode.Text.Trim();
+                    dtDealers.Rows[modifyIndex]["AEName"] = txtDealerName.Text.Trim();
+                    dtDealers.Rows[modifyIndex]["AEGroup"] = ddlTeamCode.SelectedValue;
+                    //dtDealers.Rows[modifyIndex]["ATSLogin"] = txtAtsLogin.Text.Trim();
+                    dtDealers.Rows[modifyIndex]["Enable"] = assign;
+                    dtDealers.Rows[modifyIndex]["CrossGroup"] = crossGroup;
+                    dtDealers.Rows[modifyIndex]["Supervisor"] = supervisior;
+                    dtDealers.Rows[modifyIndex]["ModifiedDate"] = DateTime.Now;
+                    dtDealers.Rows[modifyIndex].EndEdit();
+                    dtDealers.AcceptChanges();
+                    */
+
+                    //Update Datatable with RecId which is unique and primary key
+                    
+                    if (drUpdate != null)
+                    {
+                        drUpdate["UserID"] = txtLoginId.Text.Trim();
+                        drUpdate["AECode"] = txtDealerCode.Text.Trim();
+                        drUpdate["AEName"] = txtDealerName.Text.Trim();
+                        drUpdate["AEGroup"] = ddlTeamCode.SelectedValue;
+                        drUpdate["Enable"] = assign;
+                        drUpdate["CrossGroup"] = crossGroup;
+                        drUpdate["Supervisor"] = supervisior;
+                        drUpdate["ModifiedDate"] = DateTime.Now;
+
+                        drUpdate["OriginalAECode"] = txtDealerCode.Text.Trim();
+                        drUpdate["OriginalUserID"] = txtLoginId.Text.Trim();
+                        drUpdate["Email"] = txtEmailID.Text.Trim();
+                        drUpdate["AltAECode"] = txtAltAECode.Text.Trim();
+                    }
+                    
+                    ViewState["dtDealers"] = dtDealers;
+                    ht["ReturnData"] = dtDealers;
+
+                    gvDealers.DataSource = dtDealers;
+                    gvDealers.DataBind();
+
+                    this.ClearDealerForm();
+                }
+
+                validateResult = wsReturn[1];
+                ht.Add("ReturnCode", wsReturn[0]);
+            }
+            else
+            {
+                ht.Add("ReturnCode", "-1");
+            }
+            
+            
+            ht.Add("ReturnMessage", validateResult);
+            return ht;
+        }
+
+        protected void gvDealers_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                System.Drawing.Color color = System.Drawing.ColorTranslator.FromHtml("#CCFFCC");
+
+                if ((DataBinder.Eval(e.Row.DataItem, "Supervisor") != null) &&
+                        ((DataBinder.Eval(e.Row.DataItem, "Supervisor").ToString() == "Y")))
+                {
+                    e.Row.BackColor = System.Drawing.ColorTranslator.FromHtml("#FFCC99");
+                    e.Row.Cells[7].BackColor = color;
+                }
+
+                this.FillColor(e.Row, 5, DataBinder.Eval(e.Row.DataItem, "Enable"), "Y", color);
+                this.FillColor(e.Row, 6, DataBinder.Eval(e.Row.DataItem, "CrossGroup"), "Y", color); 
+              
+
+                //Access Right
+
+                System.Web.UI.WebControls.Button btnModify = (System.Web.UI.WebControls.Button)e.Row.Cells[10].FindControl("gvbtnModify");
+                System.Web.UI.WebControls.Button btnDelete = (System.Web.UI.WebControls.Button)e.Row.Cells[10].FindControl("Button2");
+
+                if (btnModify != null)
+                {
+                    ((System.Web.UI.WebControls.Button)e.Row.Cells[10].FindControl("gvbtnModify")).Enabled = (bool)ViewState["ModifyAccessRight"];
+                    //if (accessRight[2] == "N")
+                    //{
+                    //    ((System.Web.UI.WebControls.Button)e.Row.Cells[10].FindControl("gvbtnModify")).Enabled = false;
+                    //}
+                    //else
+                    //{
+                    //    ((System.Web.UI.WebControls.Button)e.Row.Cells[10].FindControl("gvbtnModify")).Enabled = true;
+                    //}
+                }
+                if (btnDelete != null)
+                {
+                    ((System.Web.UI.WebControls.Button)e.Row.Cells[10].FindControl("Button2")).Enabled = (bool)ViewState["DeleteAccessRight"];
+                    //if (accessRight[3] == "N")
+                    //{
+                    //    ((System.Web.UI.WebControls.Button)e.Row.Cells[10].FindControl("Button2")).Enabled = false;
+                    //}
+                    //else
+                    //{
+                    //    ((System.Web.UI.WebControls.Button)e.Row.Cells[10].FindControl("Button2")).Enabled = true;
+                    //}
+                }
+            }
+        }
+
+        protected void gvDealers_Sorting(object sender, GridViewSortEventArgs e)
+        {
+            DataTable dtDealers = ViewState["dtDealers"] as DataTable;
+            DataTable sortedDataTable = null;
+
+            string sortDirection = "", sortString = "";
+
+            sortDirection = CommonUtilities.GetSortDirection(e.SortExpression, ViewState["SortExpression"] as string, ViewState["SortDirection"] as string);
+
+            ViewState["SortDirection"] = sortDirection;
+            ViewState["SortExpression"] = e.SortExpression;
+
+            sortString = e.SortExpression + " " + sortDirection;
+            sortedDataTable = CommonUtilities.SortDataTable(dtDealers, sortString);
+
+            ViewState["dtDealers"] = sortedDataTable;
+
+            gvDealers.PageIndex = 0;
+            gvDealers.DataSource = sortedDataTable;
+            gvDealers.DataBind();
+
+            DisplayPaging();
+        }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            btnCancel.Visible = false;
+            btnUpdate.Visible = false;
+
+            btnSearch.Visible = true;
+            btnAddDealer.Visible = true;
+
+            divMessage.InnerHtml = "";
+            ClearDealerForm();
+        }
+        
+
+        //Helper Methods
+        private void FillColor(GridViewRow gvr, int cellIndex, object bindValue, string checkValue, System.Drawing.Color color)
+        {
+            if ((bindValue != null) && (bindValue.ToString().Equals(checkValue)))
+            {
+                gvr.Cells[cellIndex].BackColor = color;
+            }
+        }
+
+        private string ValidateDealerForm()
+        {
+            string validateResult = "";
+            CommonUtilities common = new CommonUtilities();
+
+            if (String.IsNullOrEmpty(txtDealerCode.Text.Trim()))
+            {
+                validateResult = "Dealer Code cannot be blank!";
+            }
+            else if (String.IsNullOrEmpty(txtLoginId.Text.Trim()))
+            {
+                validateResult = "Login Id cannot be blank!";
+            }
+            else if (String.IsNullOrEmpty(txtDealerName.Text.Trim()))
+            {
+                validateResult = "Dealer Name cannot be blank!";
+            }
+            else if (String.IsNullOrEmpty(ddlTeamCode.SelectedValue))
+            {
+                validateResult = "Please select Team for Dealer!";
+            }
+            else if (String.IsNullOrEmpty(txtEmailID.Text.Trim()))
+            {
+                validateResult = "Email cannot be blank!";
+            }
+            else if (!common.isEmail(txtEmailID.Text.Trim()))
+            {
+                validateResult = "Invalid Email Format!";
+            }
+
+            return validateResult;
+        }
+
+        private void ClearDealerForm()
+        {
+            txtLoginId.Text = txtDealerCode.Text = txtDealerName.Text = ddlTeamCode.SelectedValue = "";
+
+            /// <Updated by OC>
+            //chkAssign.Checked = chkCrossGroup.Checked = chkSupervisior.Checked = false;
+            chkAssign.Checked = chkCrossGroup.Checked = chkUserType.Checked = Panel1.Enabled = false;
+            txtEmailID.Text = "";
+            txtAltAECode.Text = "";
+        }
+
+        private String CheckSupervisor()
+        {
+            if (chkUserType.Checked == true)
+            {
+                if (rdbtnAdministrator.Checked == true)
+                {
+                    return "Y";
+                }
+                else if (rdbtnSupervisor.Checked == true)
+                {
+                    return "S";
+                }
+                else
+                {
+                    return "N";
+                }
+            }
+            else
+            {
+                return "N";
+            }
+        }
+
+        protected void chkUserType_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkUserType.Checked == true)
+            {
+                Panel1.Enabled = true;
+                rdbtnAdministrator.Checked = true;
+            }
+            else
+            {
+                Panel1.Enabled = false;
+            }
+        }
+    }
+}

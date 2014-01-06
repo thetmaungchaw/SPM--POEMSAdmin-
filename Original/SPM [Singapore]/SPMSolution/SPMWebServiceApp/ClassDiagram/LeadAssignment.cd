@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="SPMWebServiceApp.WebServices.LeadsAssignmentManagement" Collapsed="true">
+    <Position X="8" Y="6.25" Width="4.5" />
+    <Members>
+      <Method Name="InsertEmailLog" Hidden="true" />
+      <Method Name="PrepareForAssignedLeadsInfo" Hidden="true" />
+      <Method Name="PrepareForLeadsAssignmentHistory" Hidden="true" />
+      <Method Name="RetrieveAllProjectInformation" Hidden="true" />
+      <Method Name="RetrieveAssignedLeadsInfo" Hidden="true" />
+      <Method Name="RetrieveAssignedLeadsProjectByUserId" Hidden="true" />
+      <Method Name="RetrieveDealerAndTeamForLeadsAssignment" Hidden="true" />
+      <Method Name="RetrieveDealerByTeamCodeForLeadsAssignment" Hidden="true" />
+      <Method Name="RetrieveLeadsAssignmentDateByDateRange" Hidden="true" />
+      <Method Name="RetrieveLeadsAssignmentHistoryByCriteria" Hidden="true" />
+      <Method Name="RetrieveTeamsForLeadsAssignment" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>MAAAgQAEgAIAAAQAAACABEIAAYAAAAQACAgAAIAAAAA=</HashCode>
+      <FileName>WebServices\LeadsAssignmentManagement.asmx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SPMWebServiceApp.WebServices.CommonSPMService" Collapsed="true">
+    <Position X="7.75" Y="7.75" Width="5.25" />
+    <Members>
+      <Method Name="DeleteEmailTemplate" Hidden="true" />
+      <Method Name="getAccessRight" Hidden="true" />
+      <Method Name="InsertEmailTemplate" Hidden="true" />
+      <Method Name="RetrieveAllDealer" Hidden="true" />
+      <Method Name="RetrieveAllProjectByProjectName" Hidden="true" />
+      <Method Name="RetrieveAllTeamCodeAndName" Hidden="true" />
+      <Method Name="RetrieveDealerCodeAndNameByTeam" Hidden="true" />
+      <Method Name="RetrieveEmailTemplate" Hidden="true" />
+      <Method Name="RetrievePreferenceCodeAndName" Hidden="true" />
+      <Method Name="RetrieveProjectByUserId" Hidden="true" />
+      <Method Name="RetrieveProjectTotalCommByProjectId" Hidden="true" />
+      <Method Name="RetrieveTeamCodeAndName" Hidden="true" />
+      <Method Name="RetrieveTotalCommissionForUserId" Hidden="true" />
+      <Method Name="UpdateEmailTemplate" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ABBAACAAAgAAAhAACEAAAAAAAAAJYBDgAAAAAAAgCAA=</HashCode>
+      <FileName>WebServices\CommonSPMService.asmx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SPMWebServiceApp.WebServices.SPMSetup" Collapsed="true">
+    <Position X="8.5" Y="7" Width="4.25" />
+    <Members>
+      <Method Name="AddCoreClient" Hidden="true" />
+      <Method Name="AddPreference" Hidden="true" />
+      <Method Name="CheckExistingLead" Hidden="true" />
+      <Method Name="DeleteClientShortKey" Hidden="true" />
+      <Method Name="DeleteCoreClient" Hidden="true" />
+      <Method Name="DeleteCrossTeamDealer" Hidden="true" />
+      <Method Name="DeleteDealer" Hidden="true" />
+      <Method Name="DeleteLeads" Hidden="true" />
+      <Method Name="DeletePreferList" Hidden="true" />
+      <Method Name="InsertClientShortKey" Hidden="true" />
+      <Method Name="InsertCrossTeamDealer" Hidden="true" />
+      <Method Name="InsertDealer" Hidden="true" />
+      <Method Name="InsertLeads" Hidden="true" />
+      <Method Name="LeadsDataSync" Hidden="true" />
+      <Method Name="PrepareForCrossTeamSetup" Hidden="true" />
+      <Method Name="RetrieveAllDealer" Hidden="true" />
+      <Method Name="RetrieveAllLeads" Hidden="true" />
+      <Method Name="RetrieveClientShortKey" Hidden="true" />
+      <Method Name="RetrieveCoreClientList" Hidden="true" />
+      <Method Name="RetrieveCrossTeamDealer" Hidden="true" />
+      <Method Name="RetrieveExistingLeadsInfo" Hidden="true" />
+      <Method Name="RetrieveLeadsByCriteria" Hidden="true" />
+      <Method Name="RetrieveMaxLeadsID" Hidden="true" />
+      <Method Name="RetrievePerferList" Hidden="true" />
+      <Method Name="UpdateCrossTeamDealer" Hidden="true" />
+      <Method Name="UpdateDealer" Hidden="true" />
+      <Method Name="UpdateLeads" Hidden="true" />
+      <Method Name="UpdatePreferList" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAgiIAAQAACABBEIBAQEQAFAAAAAiEHECgADAAABABA=</HashCode>
+      <FileName>WebServices\SPMSetup.asmx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SPMWebServiceApp.Services.LeadsAssignmentService">
+    <Position X="0.5" Y="2" Width="3.25" />
+    <Members>
+      <Method Name="InsertEmailLog" Hidden="true" />
+      <Method Name="PrepareForAssignedLeadsInfo" Hidden="true" />
+      <Method Name="PrepareForLeadsAssignmentHistory" Hidden="true" />
+      <Method Name="RetrieveAllProjectInformation" Hidden="true" />
+      <Method Name="RetrieveAssignedLeadsInfo" Hidden="true" />
+      <Method Name="RetrieveDealerAndTeamForLeadsAssignment" Hidden="true" />
+      <Method Name="RetrieveDealerByTeamCodeForLeadsAssignment" Hidden="true" />
+      <Method Name="RetrieveLeadsAssignedProjectByUserId" Hidden="true" />
+      <Method Name="RetrieveLeadsAssignmentDateByDateRange" Hidden="true" />
+      <Method Name="RetrieveLeadsAssignmentHistoryByCriteria" Hidden="true" />
+      <Method Name="RetrieveTeamsForLeadsAssignment" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>OAAAgQAEgAIAAAQAAACABEIAAYAAAAQQCAgAAAAABAA=</HashCode>
+      <FileName>Services\LeadsAssignmentService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SPMWebServiceApp.Services.DealerService" Collapsed="true">
+    <Position X="8.25" Y="1" Width="2" />
+    <Members>
+      <Method Name="DeleteDealer" Hidden="true" />
+      <Method Name="InsertDealer" Hidden="true" />
+      <Method Name="RetrieveAllDealer" Hidden="true" />
+      <Method Name="UpdateDealer" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAABAAAQAAAAAAAAAFAAAAAAAAABCA=</HashCode>
+      <FileName>Services\DealerService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SPMWebServiceApp.Services.CommonService" Collapsed="true">
+    <Position X="7.75" Y="2.5" Width="3.25" />
+    <Members>
+      <Method Name="getAccessRight" Hidden="true" />
+      <Method Name="RetrieveAllDealer" Hidden="true" />
+      <Method Name="RetrieveAllProjectByProjectName" Hidden="true" />
+      <Method Name="RetrieveAllTeamCodeAndName" Hidden="true" />
+      <Method Name="RetrieveDealerCodeAndNameByTeam" Hidden="true" />
+      <Method Name="RetrievePreferenceCodeAndName" Hidden="true" />
+      <Method Name="RetrieveProjectByUserId" Hidden="true" />
+      <Method Name="RetrieveProjectTotalCommByProjectId" Hidden="true" />
+      <Method Name="RetrieveTeamCodeAndName" Hidden="true" />
+      <Method Name="RetrieveTotalCommissionForUserId" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ADhAACAAAAAAEgAAiEAAAAAAAAAJYBDgAAAAAAAABAA=</HashCode>
+      <FileName>Services\CommonService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SPMWebServiceApp.Services.EmailTemplateService" Collapsed="true">
+    <Position X="8.25" Y="1.75" Width="2.5" />
+    <Members>
+      <Method Name="DeleteEmailTemplate" Hidden="true" />
+      <Method Name="InsertEmailTemplate" Hidden="true" />
+      <Method Name="RetrieveEmailTemplate" Hidden="true" />
+      <Method Name="UpdateEmailTemplateByID" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AChAAAIAAgAAABAAgAAAAAAAAAAAAACAAAAAAAAgBAA=</HashCode>
+      <FileName>Services\EmailTemplateService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SPMWebServiceApp.DataAccess.EmailTemplateDA" Collapsed="true">
+    <Position X="8" Y="4" Width="2.25" />
+    <Members>
+      <Method Name="CheckEmailTemplateExist" Hidden="true" />
+      <Method Name="DeleteEmailTemplate" Hidden="true" />
+      <Method Name="InsertEmailTemplate" Hidden="true" />
+      <Method Name="RetrieveEmailTemplate" Hidden="true" />
+      <Method Name="UpdateEmailTemplateByID" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAgAAABAAAAAAAEAAAAAAAACAIAAAAAAgBAA=</HashCode>
+      <FileName>DataAccess\EmailTemplateDA.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SPMWebServiceApp.DataAccess.DealerDA" Collapsed="true">
+    <Position X="8.25" Y="3.25" Width="3.5" />
+    <Members>
+      <Method Name="CheckDealerExist" Hidden="true" />
+      <Method Name="DeleteDealer" Hidden="true" />
+      <Method Name="FillDealerByTeamCode" Hidden="true" />
+      <Method Name="InsertDealer" Hidden="true" />
+      <Method Name="RetrieveAllDealer" Hidden="true" />
+      <Method Name="RetrieveDealerByDealerCode" Hidden="true" />
+      <Method Name="RetrieveDealerByTeamCode" Hidden="true" />
+      <Method Name="RetrieveDealerByUserId" Hidden="true" />
+      <Method Name="UpdateDealer" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAABAgAAAAABAQABAAAQEAAAAAAAAFAAAAkAAAABAA=</HashCode>
+      <FileName>DataAccess\DealerDA.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SPMWebServiceApp.DataAccess.CommonServiceDA" Collapsed="true">
+    <Position X="8" Y="4.75" Width="3" />
+    <Members>
+      <Method Name="dtRetrieveDealerCodeAndNameByUserID" Hidden="true" />
+      <Method Name="getAccessRight" Hidden="true" />
+      <Method Name="RetrieveAllDealer" Hidden="true" />
+      <Method Name="RetrieveAllProjectByProjectName" Hidden="true" />
+      <Method Name="RetrieveAllTeamCodeAndName" Hidden="true" />
+      <Method Name="RetrieveCrossEnableDealer" Hidden="true" />
+      <Method Name="RetrieveDealerCodeAndNameByTeam" Hidden="true" />
+      <Method Name="RetrievePreferenceCodeAndName" Hidden="true" />
+      <Method Name="RetrieveProjectByUserId" Hidden="true" />
+      <Method Name="RetrieveProjectTotalCommByProjectId" Hidden="true" />
+      <Method Name="RetrieveTeamCodeAndName" Hidden="true" />
+      <Method Name="RetrieveTeamCodeAndNameByDataTable" Hidden="true" />
+      <Method Name="RetrieveTotalCommissionForUserId" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ABBAAAAAAAAAAgIAKEAIAEAAAAAJYBDgAgAAAAAABAA=</HashCode>
+      <FileName>DataAccess\CommonServiceDA.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SPMWebServiceApp.DataAccess.LeadsAssignmentDA" Collapsed="true">
+    <Position X="8" Y="5.5" Width="2.75" />
+    <Members>
+      <Method Name="DeleteLeadsProjects" Hidden="true" />
+      <Method Name="getNewID" Hidden="true" />
+      <Method Name="InsertEmailLog" Hidden="true" />
+      <Method Name="padZeros" Hidden="true" />
+      <Method Name="RetrieveAllProjectInfo" Hidden="true" />
+      <Method Name="RetrieveAssignedLeadsInfo" Hidden="true" />
+      <Method Name="RetrieveLeadsAssignedProjectByUserId" Hidden="true" />
+      <Method Name="RetrieveLeadsAssignmentDateByDateRange" Hidden="true" />
+      <Method Name="RetrieveLeadsAssignmentForExtraCall" Hidden="true" />
+      <Method Name="RetrieveLeadsAssignmentHistoryByCriteria" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>MAgABQAAgAMAAAAAAAAIBEIAAAAAAAQQAAgEAAAEBAA=</HashCode>
+      <FileName>DataAccess\LeadsAssignmentDA.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

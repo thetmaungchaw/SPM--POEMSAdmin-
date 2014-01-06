@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="SPMWebApp.WebPages.LeadManagement.LeadContactEntry">
+    <Position X="0.5" Y="0.5" Width="5" />
+    <Members>
+      <Field Name="btnAddContact" Hidden="true" />
+      <Field Name="btnCancel" Hidden="true" />
+      <Field Name="btnSync" Hidden="true" />
+      <Field Name="btnSyncCancel" Hidden="true" />
+      <Field Name="btnSyncSubmit" Hidden="true" />
+      <Field Name="btnUpdateContact" Hidden="true" />
+      <Field Name="calFollowupDate" Hidden="true" />
+      <Field Name="chkFollowUp" Hidden="true" />
+      <Field Name="contactType" Hidden="true" />
+      <Field Name="ddlActualDealer" Hidden="true" />
+      <Field Name="ddlPreferredMode" Hidden="true" />
+      <Field Name="ddlTeam" Hidden="true" />
+      <Field Name="divAdminEntry" Hidden="true" />
+      <Field Name="divAssignPaging" Hidden="true" />
+      <Field Name="divCHPaging" Hidden="true" />
+      <Field Name="divFollowUpPaging" Hidden="true" />
+      <Field Name="divMessageTwo" Hidden="true" />
+      <Field Name="divSyncMessage" Hidden="true" />
+      <Field Name="divTitle" Hidden="true" />
+      <Field Name="frmContactEntry" Hidden="true" />
+      <Field Name="gvAssignments" Hidden="true" />
+      <Field Name="gvContactHistory" Hidden="true" />
+      <Field Name="gvFollowUp" Hidden="true" />
+      <Field Name="hdfDealerCode" Hidden="true" />
+      <Field Name="hdfRecId" Hidden="true" />
+      <Field Name="hdfStatus" Hidden="true" />
+      <Field Name="lblDealer" Hidden="true" />
+      <Field Name="lblLeadId" Hidden="true" />
+      <Field Name="lblProjectID" Hidden="true" />
+      <Field Name="lbtnContactHistory" Hidden="true" />
+      <Field Name="lbtnEntryHistory" Hidden="true" />
+      <Method Name="padZeros" Hidden="true" />
+      <Method Name="Page_Load" Hidden="true" />
+      <Field Name="panelFollowupPanel" Hidden="true" />
+      <Field Name="panelSync" Hidden="true" />
+      <Field Name="pgcAssignment" Hidden="true" />
+      <Field Name="pgcContactHistory" Hidden="true" />
+      <Field Name="pgcFollowUp" Hidden="true" />
+      <Field Name="rbtnFemale" Hidden="true" />
+      <Field Name="rbtnMale" Hidden="true" />
+      <Field Name="rdoAccNo" Hidden="true" />
+      <Field Name="rdoNRIC" Hidden="true" />
+      <Field Name="ScriptManager1" Hidden="true" />
+      <Field Name="tdContactHistory" Hidden="true" />
+      <Field Name="tdEntryHistory" Hidden="true" />
+      <Field Name="txtContent" Hidden="true" />
+      <Field Name="txtEmail" Hidden="true" />
+      <Field Name="txtEvent" Hidden="true" />
+      <Field Name="txtHomeNo" Hidden="true" />
+      <Field Name="txtMobileNo" Hidden="true" />
+      <Field Name="txtName" Hidden="true" />
+      <Field Name="txtNRIC" Hidden="true" />
+      <Field Name="txtSyncAccNo" Hidden="true" />
+      <Field Name="txtSyncNRIC" Hidden="true" />
+      <Field Name="uplContactEntry" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>8B4BrUIDYS+BkSNgHAhAMUIIMCKAkbGBUwSSKKocUDc=</HashCode>
+      <FileName>WebPages\LeadManagement\LeadContactEntry.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SPMWebApp.Services.LeadsContactService">
+    <Position X="6" Y="0.5" Width="4" />
+    <Members>
+      <Method Name="PrepareForLeadsAnalysis" Hidden="true" />
+      <Method Name="RetrieveCallReport" Hidden="true" />
+      <Method Name="RetrieveCallReportDetail" Hidden="true" />
+      <Method Name="RetrieveContactAnalysis" Hidden="true" />
+      <Method Name="RetrieveContactHistoryByCriteria" Hidden="true" />
+      <Method Name="RetrieveLeadsAnalysis" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>CCAAAAAIIAAEAAAAAAAIAMAgAACAgAAiQAAAECAABAA=</HashCode>
+      <FileName>Services\LeadsContactService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SPMWebApp.Services.LeadsService">
+    <Position X="6.25" Y="4" Width="3.75" />
+    <Members>
+      <Method Name="CheckExistingLead" Hidden="true" />
+      <Method Name="DeleteLeads" Hidden="true" />
+      <Method Name="RetrieveAllLeads" Hidden="true" />
+      <Method Name="RetrieveExistingLeadsInfo" Hidden="true" />
+      <Method Name="RetrieveLeadsByCriteria" Hidden="true" />
+      <Method Name="UpdateLeads" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ACgAAAAQAAAAABEAAAQEAABAAAAAAAAAAAACAAABBAA=</HashCode>
+      <FileName>Services\LeadsService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

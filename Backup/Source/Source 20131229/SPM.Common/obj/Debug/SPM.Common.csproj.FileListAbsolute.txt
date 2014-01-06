@@ -1,0 +1,10 @@
+D:\OC\Project\SPM Phase IV (POEMSAdmin)\Source\SPM.Common\bin\Debug\SPM.Common.dll
+D:\OC\Project\SPM Phase IV (POEMSAdmin)\Source\SPM.Common\bin\Debug\SPM.Common.pdb
+D:\OC\Project\SPM Phase IV (POEMSAdmin)\Source\SPM.Common\obj\Debug\ResolveAssemblyReference.cache
+D:\OC\Project\SPM Phase IV (POEMSAdmin)\Source\SPM.Common\obj\Debug\SPM.Common.dll
+D:\OC\Project\SPM Phase IV (POEMSAdmin)\Source\SPM.Common\obj\Debug\SPM.Common.pdb
+C:\OC\Project\SPM Phase IV (POEMSAdmin)\Backup\Source\Source 20131229\SPM.Common\bin\Debug\SPM.Common.dll
+C:\OC\Project\SPM Phase IV (POEMSAdmin)\Backup\Source\Source 20131229\SPM.Common\bin\Debug\SPM.Common.pdb
+C:\OC\Project\SPM Phase IV (POEMSAdmin)\Backup\Source\Source 20131229\SPM.Common\obj\Debug\SPM.Common.csprojResolveAssemblyReference.cache
+C:\OC\Project\SPM Phase IV (POEMSAdmin)\Backup\Source\Source 20131229\SPM.Common\obj\Debug\SPM.Common.dll
+C:\OC\Project\SPM Phase IV (POEMSAdmin)\Backup\Source\Source 20131229\SPM.Common\obj\Debug\SPM.Common.pdb

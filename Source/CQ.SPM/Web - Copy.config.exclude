@@ -1,0 +1,71 @@
+﻿<?xml version="1.0"?>
+<!--
+  For more information on how to configure your ASP.NET application, please visit
+  http://go.microsoft.com/fwlink/?LinkId=169433
+  -->
+<configuration>
+
+  <configSections>
+    <section name="log4net" type="log4net.Config.Log4NetConfigurationSectionHandler,Log4net"/>
+  </configSections>
+  <log4net>
+    <root>
+      <level value="DEBUG" />
+      <appender-ref ref="ADONetAppender" />
+    </root>
+    <appender name="ADONetAppender" type="log4net.Appender.ADONetAppender">
+      <bufferSize value="100" />
+      <connectionType value="System.Data.SqlClient.SqlConnection, System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+      <connectionString value="server=servername; uid=Lion; pwd=Lionman; database=databasename" />
+      <commandText value="INSERT INTO Log ([Date],[Thread],[Level],[Logger],[Message],[Exception]) VALUES (@log_date, @thread, @log_level, @logger, @message, @exception)" />
+      <parameter>
+        <parameterName value="@log_date"/>
+        <dbType value="DateTime"/>
+        <layout type="log4net.Layout.RawTimeStampLayout"/>
+      </parameter>
+      <parameter>
+        <parameterName value="@thread"/>
+        <dbType value="String"/>
+        <size value="255"/>
+        <layout type="log4net.Layout.PatternLayout">
+          <conversionPattern value="%thread"/>
+        </layout>
+      </parameter>
+      <parameter>
+        <parameterName value="@log_level"/>
+        <dbType value="String"/>
+        <size value="50"/>
+        <layout type="log4net.Layout.PatternLayout">
+          <conversionPattern value="%level"/>
+        </layout>
+      </parameter>
+      <parameter>
+        <parameterName value="@logger"/>
+        <dbType value="String"/>
+        <size value="255"/>
+        <layout type="log4net.Layout.PatternLayout">
+          <conversionPattern value="%logger"/>
+        </layout>
+      </parameter>
+      <parameter>
+        <parameterName value="@message"/>
+        <dbType value="String"/>
+        <size value="4000"/>
+        <layout type="log4net.Layout.PatternLayout">
+          <conversionPattern value="%message"/>
+        </layout>
+      </parameter>
+      <parameter>
+        <parameterName value="@exception"/>
+        <dbType value="String"/>
+        <size value="2000"/>
+        <layout type="log4net.Layout.ExceptionLayout"/>
+      </parameter>
+    </appender>
+  </log4net>
+  
+  <system.web>
+    <compilation debug="true" targetFramework="4.5"/>
+    <httpRuntime targetFramework="4.5"/>
+  </system.web>
+</configuration>

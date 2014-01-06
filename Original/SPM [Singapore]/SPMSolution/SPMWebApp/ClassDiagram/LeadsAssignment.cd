@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="SPMWebApp.WebPages.LeadManagement.LeadAssign">
+    <Position X="0.5" Y="0.5" Width="4" />
+    <Members>
+      <Field Name="ASSIGNMENT_2N" Hidden="true" />
+      <Field Name="ASSIGNMENT_CONTACTED" Hidden="true" />
+      <Field Name="ASSIGNMENT_CORE" Hidden="true" />
+      <Field Name="ASSIGNMENT_EXIST" Hidden="true" />
+      <Field Name="ASSIGNMENT_MISS" Hidden="true" />
+      <Field Name="ASSIGNMENT_NEW" Hidden="true" />
+      <Field Name="ASSIGNMENT_UPDATE" Hidden="true" />
+      <Field Name="btnAssignmentDelete" Hidden="true" />
+      <Field Name="btnLeadSearch" Hidden="true" />
+      <Field Name="btnSaveAssignment" Hidden="true" />
+      <Field Name="calCutOffDate" Hidden="true" />
+      <Field Name="cellCount" Hidden="true" />
+      <Field Name="chkAutoAssign" Hidden="true" />
+      <Field Name="div1" Hidden="true" />
+      <Field Name="divPaging" Hidden="true" />
+      <Field Name="divTitle" Hidden="true" />
+      <Field Name="frmClientAssign" Hidden="true" />
+      <Field Name="gvDealer" Hidden="true" />
+      <Field Name="gvLeadAssign" Hidden="true" />
+      <Field Name="hidSelectedTeamCode" Hidden="true" />
+      <Field Name="lblCutOff" Hidden="true" />
+      <Field Name="lblProjectName" Hidden="true" />
+      <Field Name="lstTeamCode" Hidden="true" />
+      <Field Name="pgcLeadAssign" Hidden="true" />
+      <Field Name="rptAutoAssign" Hidden="true" />
+      <Field Name="ScriptManager1" Hidden="true" />
+      <Field Name="txtProjectName" Hidden="true" />
+      <Field Name="uplLeadsAssign" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>gQhAswAMgiqAGxAABAIBYEUCMwSkAlIBBFAAACJwAwA=</HashCode>
+      <FileName>WebPages\LeadManagement\LeadAssign.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SPMWebApp.Services.LeadsAssignmentService">
+    <Position X="4.25" Y="5.5" Width="9.5" />
+    <Members>
+      <Method Name="InsertEmailLog" Hidden="true" />
+      <Method Name="PrepareForAssignedLeadsInfo" Hidden="true" />
+      <Method Name="PrepareForLeadsAssignmentHistory" Hidden="true" />
+      <Method Name="RetrieveAssignedLeadsInfo" Hidden="true" />
+      <Method Name="RetrieveAssignedLeadsProjectsByUserId" Hidden="true" />
+      <Method Name="RetrieveDealerAndTeamForLeadsAssignment" Hidden="true" />
+      <Method Name="RetrieveDealerByTeamCodeForLeadsAssignment" Hidden="true" />
+      <Method Name="RetrieveLeadsAssignmentDateByDateRange" Hidden="true" />
+      <Method Name="RetrieveLeadsAssignmentHistoryByCriteria" Hidden="true" />
+      <Method Name="RetrieveTeamsForLeadsAssignment" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>MCQAgQAEgAIAAEAAAACABEIAAIgAAAQASAgAAAAAAAA=</HashCode>
+      <FileName>Services\LeadsAssignmentService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SPMWebApp.Services.CommonService">
+    <Position X="4.25" Y="3" Width="4.25" />
+    <Members>
+      <Method Name="getAccessRight" Hidden="true" />
+      <Method Name="RetrieveAllDealer" Hidden="true" />
+      <Method Name="RetrieveAllProjectByProjectName" Hidden="true" />
+      <Method Name="RetrieveAllTeamCodeAndName" Hidden="true" />
+      <Method Name="RetrieveClientRanks" Hidden="true" />
+      <Method Name="RetrieveDealerCodeAndNameByTeam" Hidden="true" />
+      <Method Name="RetrievePreferenceCodeAndName" Hidden="true" />
+      <Method Name="RetrieveProjectsByUserId" Hidden="true" />
+      <Method Name="RetrieveProjectTotalCommByProjectId" Hidden="true" />
+      <Method Name="RetrieveTeamCodeAndName" Hidden="true" />
+      <Method Name="RetrieveTotalCommissionForUser" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ACFAAAAAAQAAAiAACEAAAAAAAAAJYgDgQAAAAAAAAAA=</HashCode>
+      <FileName>Services\CommonService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SPMWebApp.Services.DealerService">
+    <Position X="7" Y="1" Width="2.25" />
+    <Members>
+      <Method Name="DeleteDealer" Hidden="true" />
+      <Method Name="InsertDealer" Hidden="true" />
+      <Method Name="RetrieveAllDealer" Hidden="true" />
+      <Method Name="UpdateDealer" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAABAAABAAAQAAAAAAAAAFAAAACAAAABAA=</HashCode>
+      <FileName>Services\DealerService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SPMWebApp.Services.EmailTemplateService">
+    <Position X="4.25" Y="1.25" Width="2.25" />
+    <Members>
+      <Method Name="DeleteTemplate" Hidden="true" />
+      <Method Name="EmailTemplateService" Hidden="true" />
+      <Method Name="InsertEmailTemplate" Hidden="true" />
+      <Method Name="RetrieveEmailTemplate" Hidden="true" />
+      <Method Name="UpdateEmailTemplate" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ACAQAAAAAgAAABAAAAAAAAAAAAAAAAAAQAAAABAgCAA=</HashCode>
+      <FileName>Services\EmailTemplateService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

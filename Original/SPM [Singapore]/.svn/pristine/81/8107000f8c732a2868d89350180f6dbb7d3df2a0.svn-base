@@ -1,0 +1,30 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SPMWebApp.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SPMWebApp_AccessManagementService_AccessManagementService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:52599/SpmWebService/WebServices/AccessManagementService.asmx</Value>
+    </Setting>
+    <Setting Name="SPMWebApp_CommonServices_CommonSPMService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:52599/SpmWebService/WebServices/CommonSPMService.asmx</Value>
+    </Setting>
+    <Setting Name="SPMWebApp_SPMSetupService_SPMSetup" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:52599/SpmWebService/WebServices/SPMSetup.asmx</Value>
+    </Setting>
+    <Setting Name="SPMWebApp_LeadsAssignmentManagementService_LeadsAssignmentManagement" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:52599/SpmWebService/WebServices/LeadsAssignmentManagement.asmx</Value>
+    </Setting>
+    <Setting Name="SPMWebApp_LeadsContactManagementService_LeadsContactManagement" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:52599/SpmWebService/WebServices/LeadsContactManagement.asmx</Value>
+    </Setting>
+    <Setting Name="SPMWebApp_ContactManagementService_ContactManagement" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:52599/SpmWebService/WebServices/ContactManagement.asmx</Value>
+    </Setting>
+    <Setting Name="SPMWebApp_AssignmentManagementService_AssignmentManagement" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:52599/SpmWebService/WebServices/AssignmentManagement.asmx</Value>
+    </Setting>
+    <Setting Name="SPMWebApp_SuperAdmin_SuperAdmin" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:52599/SpmWebService/WebServices/SuperAdmin.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

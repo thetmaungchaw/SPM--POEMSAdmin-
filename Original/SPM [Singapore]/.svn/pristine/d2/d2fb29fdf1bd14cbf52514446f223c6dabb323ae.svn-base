@@ -1,0 +1,78 @@
+<publishData>
+  <publishTarget publishUrl="D:\SPMWebServiceApp\">
+    <file relUrl="bin/SPMWebServiceApp.pdb" publishTime="08/01/2013 18:09:33" />
+    <file relUrl="bin/SPMWebServiceApp.dll" publishTime="08/01/2013 18:09:33" />
+    <file relUrl="Web.config" publishTime="07/19/2013 16:30:38" />
+    <file relUrl="WebServices/CommonSPMService.asmx" publishTime="04/02/2012 17:37:35" />
+    <file relUrl="WebServices/AccessManagementService.asmx" publishTime="04/02/2012 17:37:35" />
+    <file relUrl="WebServices/LeadsAssignmentManagement.asmx" publishTime="04/02/2012 17:37:35" />
+    <file relUrl="WebServices/ContactManagement.asmx" publishTime="04/02/2012 17:37:35" />
+    <file relUrl="WebServices/SuperAdmin.asmx" publishTime="05/21/2013 17:42:54" />
+    <file relUrl="WebServices/SPMSetup.asmx" publishTime="04/02/2012 17:37:35" />
+    <file relUrl="WebServices/LeadsContactManagement.asmx" publishTime="04/02/2012 17:37:35" />
+    <file relUrl="WebServices/AssignmentManagement.asmx" publishTime="04/02/2012 17:37:35" />
+  </publishTarget>
+  <publishTarget publishUrl="D:\OC\Publish\SPM Singapore\SPMWebServiceApp\">
+    <file relUrl="bin/SPMWebServiceApp.pdb" publishTime="07/13/2012 12:54:54" />
+    <file relUrl="bin/SPMWebServiceApp.dll" publishTime="07/13/2012 12:54:54" />
+    <file relUrl="Web.config" publishTime="04/02/2012 17:37:35" />
+    <file relUrl="WebServices/AccessManagementService.asmx" publishTime="04/02/2012 17:37:35" />
+    <file relUrl="WebServices/SPMSetup.asmx" publishTime="04/02/2012 17:37:35" />
+    <file relUrl="WebServices/LeadsAssignmentManagement.asmx" publishTime="04/02/2012 17:37:35" />
+    <file relUrl="WebServices/CommonSPMService.asmx" publishTime="04/02/2012 17:37:35" />
+    <file relUrl="WebServices/ContactManagement.asmx" publishTime="04/02/2012 17:37:35" />
+    <file relUrl="WebServices/LeadsContactManagement.asmx" publishTime="04/02/2012 17:37:35" />
+    <file relUrl="WebServices/AssignmentManagement.asmx" publishTime="04/02/2012 17:37:35" />
+  </publishTarget>
+  <publishTarget publishUrl="D:\OC\Publish\SPM\SPMWebServiceApp\">
+    <file relUrl="bin/SPMWebServiceApp.pdb" publishTime="02/29/2012 21:53:09" />
+    <file relUrl="bin/SPMWebServiceApp.dll" publishTime="02/29/2012 21:53:09" />
+    <file relUrl="Web.config" publishTime="01/30/2012 15:41:06" />
+    <file relUrl="WebServices/AccessManagementService.asmx" publishTime="01/30/2012 15:41:06" />
+    <file relUrl="WebServices/LeadsAssignmentManagement.asmx" publishTime="01/30/2012 15:41:06" />
+    <file relUrl="WebServices/ContactManagement.asmx" publishTime="01/30/2012 15:41:06" />
+    <file relUrl="WebServices/CommonSPMService.asmx" publishTime="01/30/2012 15:41:06" />
+    <file relUrl="WebServices/SPMSetup.asmx" publishTime="01/30/2012 15:41:06" />
+    <file relUrl="WebServices/LeadsContactManagement.asmx" publishTime="01/30/2012 15:41:06" />
+    <file relUrl="WebServices/AssignmentManagement.asmx" publishTime="01/30/2012 15:41:06" />
+  </publishTarget>
+  <publishTarget publishUrl="D:\Work\Projects\SPM - Sales Performance Management\SPM_Publish\SPMWebService\">
+    <file relUrl="bin/SPMWebServiceApp.pdb" publishTime="11/23/2011 16:50:08" />
+    <file relUrl="bin/SPMWebServiceApp.dll" publishTime="11/23/2011 16:50:08" />
+    <file relUrl="Web.config" publishTime="11/16/2011 15:08:56" />
+    <file relUrl="WebServices/AccessManagementService.asmx" publishTime="11/16/2011 15:08:56" />
+    <file relUrl="WebServices/LeadsAssignmentManagement.asmx" publishTime="11/16/2011 15:08:56" />
+    <file relUrl="WebServices/ContactManagement.asmx" publishTime="11/16/2011 15:08:56" />
+    <file relUrl="WebServices/CommonSPMService.asmx" publishTime="11/16/2011 15:08:56" />
+    <file relUrl="WebServices/SPMSetup.asmx" publishTime="11/16/2011 15:08:56" />
+    <file relUrl="WebServices/LeadsContactManagement.asmx" publishTime="11/16/2011 15:08:56" />
+    <file relUrl="WebServices/AssignmentManagement.asmx" publishTime="11/16/2011 15:08:57" />
+  </publishTarget>
+  <publishTarget publishUrl="D:\Work\Projects\SPM_Publish\SPMWebService\">
+    <file relUrl="bin/SPMWebServiceApp.pdb" publishTime="10/28/2011 14:15:25" />
+    <file relUrl="bin/SPMWebServiceApp.dll" publishTime="10/28/2011 14:15:26" />
+    <file relUrl="Web.config" publishTime="09/19/2011 10:35:16" />
+    <file relUrl="WebServices/AccessManagementService.asmx" publishTime="09/19/2011 10:35:13" />
+    <file relUrl="WebServices/SPMSetup.asmx" publishTime="09/19/2011 10:35:13" />
+    <file relUrl="WebServices/LeadsAssignmentManagement.asmx" publishTime="09/19/2011 10:35:13" />
+    <file relUrl="WebServices/CommonSPMService.asmx" publishTime="09/19/2011 10:35:13" />
+    <file relUrl="WebServices/ContactManagement.asmx" publishTime="09/19/2011 10:35:13" />
+    <file relUrl="WebServices/LeadsContactManagement.asmx" publishTime="09/19/2011 10:35:13" />
+    <file relUrl="WebServices/AssignmentManagement.asmx" publishTime="09/19/2011 10:35:13" />
+  </publishTarget>
+  <publishTarget publishUrl="C:\Tmp\SpmWebService\">
+    <file relUrl="bin/SPMWebServiceApp.pdb" publishTime="05/21/2010 11:48:00" />
+    <file relUrl="WebServices/SPMSetup.asmx" publishTime="03/05/2010 09:24:36" />
+    <file relUrl="bin/.svn/prop-base/SPMWebServiceApp.pdb.svn-base" publishTime="03/05/2010 09:24:36" />
+    <file relUrl="bin/SPMWebServiceApp.dll" publishTime="05/21/2010 11:48:00" />
+    <file relUrl="Web.config" publishTime="05/07/2010 10:15:06" />
+    <file relUrl="bin/.svn/prop-base/SPMWebServiceApp.dll.svn-base" publishTime="03/05/2010 09:24:36" />
+    <file relUrl="WebServices/AccessManagementService.asmx" publishTime="03/12/2010 18:10:26" />
+    <file relUrl="bin/.svn/entries" publishTime="05/21/2010 10:56:52" />
+    <file relUrl="bin/.svn/text-base/SPMWebServiceApp.dll.svn-base" publishTime="05/21/2010 10:56:51" />
+    <file relUrl="bin/.svn/text-base/SPMWebServiceApp.pdb.svn-base" publishTime="04/20/2010 11:23:00" />
+    <file relUrl="WebServices/CommonSPMService.asmx" publishTime="03/10/2010 18:55:39" />
+    <file relUrl="WebServices/ContactManagement.asmx" publishTime="03/05/2010 09:24:36" />
+    <file relUrl="WebServices/AssignmentManagement.asmx" publishTime="03/05/2010 09:24:36" />
+  </publishTarget>
+</publishData>

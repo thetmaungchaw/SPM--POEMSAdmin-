@@ -1,0 +1,980 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="RetrieveLeadsForAssignment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="teamCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveLeadsForAssignmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveLeadsForAssignmentResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveTeamsForLeadsAssignment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveTeamsForLeadsAssignmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveTeamsForLeadsAssignmentResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveDealerAndTeamForLeadsAssignment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveDealerAndTeamForLeadsAssignmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveDealerAndTeamForLeadsAssignmentResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveDealerByTeamCodeForLeadsAssignment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="teamCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveDealerByTeamCodeForLeadsAssignmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveDealerByTeamCodeForLeadsAssignmentResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertLeadsAssignment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ds">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="ProjectID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertLeadsAssignmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertLeadsAssignmentResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DeleteLeadsAssignment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dealerCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="assignDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cutOffDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="modifiedUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="modifiedDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newModifiedUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteLeadsAssignmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteLeadsAssignmentResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BatchDeleteLeadsAssignment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dsAssignDelete">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BatchDeleteLeadsAssignmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BatchDeleteLeadsAssignmentResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveLeadsAssignmentHistoryByCriteria">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dealerCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nric" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="toDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="retradeFlag" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveLeadsAssignmentHistoryByCriteriaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveLeadsAssignmentHistoryByCriteriaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveAssignedLeadsInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="teamCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dealerCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="assignDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveAssignedLeadsInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveAssignedLeadsInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrepareForAssignedLeadsInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrepareForAssignedLeadsInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrepareForAssignedLeadsInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrepareForLeadsAssignmentHistory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrepareForLeadsAssignmentHistoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrepareForLeadsAssignmentHistoryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveCrossEnabledTeam">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveCrossEnabledTeamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveCrossEnabledTeamResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveCrossEnabledDealer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="crossTeamCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveCrossEnabledDealerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveCrossEnabledDealerResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveLeadsAssignmentDateByDateRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="toDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveLeadsAssignmentDateByDateRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveLeadsAssignmentDateByDateRangeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveProjectInformation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProjectName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CutOffDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveProjectInformationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveProjectInformationResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveAllProjectInformation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveAllProjectInformationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveAllProjectInformationResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveAssignedLeadsProjectByUserId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveAssignedLeadsProjectByUserIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveAssignedLeadsProjectByUserIdResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveDealerEmailByDelaerCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dealerCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveDealerEmailByDelaerCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveDealerEmailByDelaerCodeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertEmailLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FromEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Subject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailContent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertEmailLogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertEmailLogResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RetrieveLeadsForAssignmentSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveLeadsForAssignment" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveLeadsForAssignmentSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveLeadsForAssignmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveTeamsForLeadsAssignmentSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveTeamsForLeadsAssignment" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveTeamsForLeadsAssignmentSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveTeamsForLeadsAssignmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveDealerAndTeamForLeadsAssignmentSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveDealerAndTeamForLeadsAssignment" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveDealerAndTeamForLeadsAssignmentSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveDealerAndTeamForLeadsAssignmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveDealerByTeamCodeForLeadsAssignmentSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveDealerByTeamCodeForLeadsAssignment" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveDealerByTeamCodeForLeadsAssignmentSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveDealerByTeamCodeForLeadsAssignmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertLeadsAssignmentSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertLeadsAssignment" />
+  </wsdl:message>
+  <wsdl:message name="InsertLeadsAssignmentSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertLeadsAssignmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteLeadsAssignmentSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteLeadsAssignment" />
+  </wsdl:message>
+  <wsdl:message name="DeleteLeadsAssignmentSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteLeadsAssignmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="BatchDeleteLeadsAssignmentSoapIn">
+    <wsdl:part name="parameters" element="tns:BatchDeleteLeadsAssignment" />
+  </wsdl:message>
+  <wsdl:message name="BatchDeleteLeadsAssignmentSoapOut">
+    <wsdl:part name="parameters" element="tns:BatchDeleteLeadsAssignmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveLeadsAssignmentHistoryByCriteriaSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveLeadsAssignmentHistoryByCriteria" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveLeadsAssignmentHistoryByCriteriaSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveLeadsAssignmentHistoryByCriteriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveAssignedLeadsInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveAssignedLeadsInfo" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveAssignedLeadsInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveAssignedLeadsInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrepareForAssignedLeadsInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:PrepareForAssignedLeadsInfo" />
+  </wsdl:message>
+  <wsdl:message name="PrepareForAssignedLeadsInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:PrepareForAssignedLeadsInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrepareForLeadsAssignmentHistorySoapIn">
+    <wsdl:part name="parameters" element="tns:PrepareForLeadsAssignmentHistory" />
+  </wsdl:message>
+  <wsdl:message name="PrepareForLeadsAssignmentHistorySoapOut">
+    <wsdl:part name="parameters" element="tns:PrepareForLeadsAssignmentHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveCrossEnabledTeamSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveCrossEnabledTeam" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveCrossEnabledTeamSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveCrossEnabledTeamResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveCrossEnabledDealerSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveCrossEnabledDealer" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveCrossEnabledDealerSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveCrossEnabledDealerResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveLeadsAssignmentDateByDateRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveLeadsAssignmentDateByDateRange" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveLeadsAssignmentDateByDateRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveLeadsAssignmentDateByDateRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveProjectInformationSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveProjectInformation" />
+  </wsdl:message>
+  <wsdl:message name="SaveProjectInformationSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveProjectInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveAllProjectInformationSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveAllProjectInformation" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveAllProjectInformationSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveAllProjectInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveAssignedLeadsProjectByUserIdSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveAssignedLeadsProjectByUserId" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveAssignedLeadsProjectByUserIdSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveAssignedLeadsProjectByUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveDealerEmailByDelaerCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveDealerEmailByDelaerCode" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveDealerEmailByDelaerCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveDealerEmailByDelaerCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertEmailLogSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertEmailLog" />
+  </wsdl:message>
+  <wsdl:message name="InsertEmailLogSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertEmailLogResponse" />
+  </wsdl:message>
+  <wsdl:portType name="LeadsAssignmentManagementSoap">
+    <wsdl:operation name="RetrieveLeadsForAssignment">
+      <wsdl:input message="tns:RetrieveLeadsForAssignmentSoapIn" />
+      <wsdl:output message="tns:RetrieveLeadsForAssignmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveTeamsForLeadsAssignment">
+      <wsdl:input message="tns:RetrieveTeamsForLeadsAssignmentSoapIn" />
+      <wsdl:output message="tns:RetrieveTeamsForLeadsAssignmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveDealerAndTeamForLeadsAssignment">
+      <wsdl:input message="tns:RetrieveDealerAndTeamForLeadsAssignmentSoapIn" />
+      <wsdl:output message="tns:RetrieveDealerAndTeamForLeadsAssignmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveDealerByTeamCodeForLeadsAssignment">
+      <wsdl:input message="tns:RetrieveDealerByTeamCodeForLeadsAssignmentSoapIn" />
+      <wsdl:output message="tns:RetrieveDealerByTeamCodeForLeadsAssignmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertLeadsAssignment">
+      <wsdl:input message="tns:InsertLeadsAssignmentSoapIn" />
+      <wsdl:output message="tns:InsertLeadsAssignmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLeadsAssignment">
+      <wsdl:input message="tns:DeleteLeadsAssignmentSoapIn" />
+      <wsdl:output message="tns:DeleteLeadsAssignmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BatchDeleteLeadsAssignment">
+      <wsdl:input message="tns:BatchDeleteLeadsAssignmentSoapIn" />
+      <wsdl:output message="tns:BatchDeleteLeadsAssignmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveLeadsAssignmentHistoryByCriteria">
+      <wsdl:input message="tns:RetrieveLeadsAssignmentHistoryByCriteriaSoapIn" />
+      <wsdl:output message="tns:RetrieveLeadsAssignmentHistoryByCriteriaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAssignedLeadsInfo">
+      <wsdl:input message="tns:RetrieveAssignedLeadsInfoSoapIn" />
+      <wsdl:output message="tns:RetrieveAssignedLeadsInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrepareForAssignedLeadsInfo">
+      <wsdl:input message="tns:PrepareForAssignedLeadsInfoSoapIn" />
+      <wsdl:output message="tns:PrepareForAssignedLeadsInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrepareForLeadsAssignmentHistory">
+      <wsdl:input message="tns:PrepareForLeadsAssignmentHistorySoapIn" />
+      <wsdl:output message="tns:PrepareForLeadsAssignmentHistorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveCrossEnabledTeam">
+      <wsdl:input message="tns:RetrieveCrossEnabledTeamSoapIn" />
+      <wsdl:output message="tns:RetrieveCrossEnabledTeamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveCrossEnabledDealer">
+      <wsdl:input message="tns:RetrieveCrossEnabledDealerSoapIn" />
+      <wsdl:output message="tns:RetrieveCrossEnabledDealerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveLeadsAssignmentDateByDateRange">
+      <wsdl:input message="tns:RetrieveLeadsAssignmentDateByDateRangeSoapIn" />
+      <wsdl:output message="tns:RetrieveLeadsAssignmentDateByDateRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveProjectInformation">
+      <wsdl:input message="tns:SaveProjectInformationSoapIn" />
+      <wsdl:output message="tns:SaveProjectInformationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAllProjectInformation">
+      <wsdl:input message="tns:RetrieveAllProjectInformationSoapIn" />
+      <wsdl:output message="tns:RetrieveAllProjectInformationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAssignedLeadsProjectByUserId">
+      <wsdl:input message="tns:RetrieveAssignedLeadsProjectByUserIdSoapIn" />
+      <wsdl:output message="tns:RetrieveAssignedLeadsProjectByUserIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveDealerEmailByDelaerCode">
+      <wsdl:input message="tns:RetrieveDealerEmailByDelaerCodeSoapIn" />
+      <wsdl:output message="tns:RetrieveDealerEmailByDelaerCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertEmailLog">
+      <wsdl:input message="tns:InsertEmailLogSoapIn" />
+      <wsdl:output message="tns:InsertEmailLogSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LeadsAssignmentManagementSoap" type="tns:LeadsAssignmentManagementSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RetrieveLeadsForAssignment">
+      <soap:operation soapAction="http://tempuri.org/RetrieveLeadsForAssignment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveTeamsForLeadsAssignment">
+      <soap:operation soapAction="http://tempuri.org/RetrieveTeamsForLeadsAssignment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveDealerAndTeamForLeadsAssignment">
+      <soap:operation soapAction="http://tempuri.org/RetrieveDealerAndTeamForLeadsAssignment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveDealerByTeamCodeForLeadsAssignment">
+      <soap:operation soapAction="http://tempuri.org/RetrieveDealerByTeamCodeForLeadsAssignment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertLeadsAssignment">
+      <soap:operation soapAction="http://tempuri.org/InsertLeadsAssignment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLeadsAssignment">
+      <soap:operation soapAction="http://tempuri.org/DeleteLeadsAssignment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BatchDeleteLeadsAssignment">
+      <soap:operation soapAction="http://tempuri.org/BatchDeleteLeadsAssignment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveLeadsAssignmentHistoryByCriteria">
+      <soap:operation soapAction="http://tempuri.org/RetrieveLeadsAssignmentHistoryByCriteria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAssignedLeadsInfo">
+      <soap:operation soapAction="http://tempuri.org/RetrieveAssignedLeadsInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrepareForAssignedLeadsInfo">
+      <soap:operation soapAction="http://tempuri.org/PrepareForAssignedLeadsInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrepareForLeadsAssignmentHistory">
+      <soap:operation soapAction="http://tempuri.org/PrepareForLeadsAssignmentHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveCrossEnabledTeam">
+      <soap:operation soapAction="http://tempuri.org/RetrieveCrossEnabledTeam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveCrossEnabledDealer">
+      <soap:operation soapAction="http://tempuri.org/RetrieveCrossEnabledDealer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveLeadsAssignmentDateByDateRange">
+      <soap:operation soapAction="http://tempuri.org/RetrieveLeadsAssignmentDateByDateRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveProjectInformation">
+      <soap:operation soapAction="http://tempuri.org/SaveProjectInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAllProjectInformation">
+      <soap:operation soapAction="http://tempuri.org/RetrieveAllProjectInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAssignedLeadsProjectByUserId">
+      <soap:operation soapAction="http://tempuri.org/RetrieveAssignedLeadsProjectByUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveDealerEmailByDelaerCode">
+      <soap:operation soapAction="http://tempuri.org/RetrieveDealerEmailByDelaerCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertEmailLog">
+      <soap:operation soapAction="http://tempuri.org/InsertEmailLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="LeadsAssignmentManagementSoap12" type="tns:LeadsAssignmentManagementSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RetrieveLeadsForAssignment">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveLeadsForAssignment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveTeamsForLeadsAssignment">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveTeamsForLeadsAssignment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveDealerAndTeamForLeadsAssignment">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveDealerAndTeamForLeadsAssignment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveDealerByTeamCodeForLeadsAssignment">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveDealerByTeamCodeForLeadsAssignment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertLeadsAssignment">
+      <soap12:operation soapAction="http://tempuri.org/InsertLeadsAssignment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLeadsAssignment">
+      <soap12:operation soapAction="http://tempuri.org/DeleteLeadsAssignment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BatchDeleteLeadsAssignment">
+      <soap12:operation soapAction="http://tempuri.org/BatchDeleteLeadsAssignment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveLeadsAssignmentHistoryByCriteria">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveLeadsAssignmentHistoryByCriteria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAssignedLeadsInfo">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveAssignedLeadsInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrepareForAssignedLeadsInfo">
+      <soap12:operation soapAction="http://tempuri.org/PrepareForAssignedLeadsInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrepareForLeadsAssignmentHistory">
+      <soap12:operation soapAction="http://tempuri.org/PrepareForLeadsAssignmentHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveCrossEnabledTeam">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveCrossEnabledTeam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveCrossEnabledDealer">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveCrossEnabledDealer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveLeadsAssignmentDateByDateRange">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveLeadsAssignmentDateByDateRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveProjectInformation">
+      <soap12:operation soapAction="http://tempuri.org/SaveProjectInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAllProjectInformation">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveAllProjectInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAssignedLeadsProjectByUserId">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveAssignedLeadsProjectByUserId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveDealerEmailByDelaerCode">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveDealerEmailByDelaerCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertEmailLog">
+      <soap12:operation soapAction="http://tempuri.org/InsertEmailLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LeadsAssignmentManagement">
+    <wsdl:port name="LeadsAssignmentManagementSoap" binding="tns:LeadsAssignmentManagementSoap">
+      <soap:address location="http://localhost:52599/SpmWebService/WebServices/LeadsAssignmentManagement.asmx" />
+    </wsdl:port>
+    <wsdl:port name="LeadsAssignmentManagementSoap12" binding="tns:LeadsAssignmentManagementSoap12">
+      <soap12:address location="http://localhost:52599/SpmWebService/WebServices/LeadsAssignmentManagement.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,1498 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="RetrieveCoreClientList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AECode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveCoreClientListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveCoreClientListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCoreClient">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AECode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCoreClientResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddCoreClientResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteCoreClient">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="recId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteCoreClientResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteCoreClientResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RetrievePerferList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="optionNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="optionContent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrievePerferListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrievePerferListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePreferList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="recId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="optionNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="optionContent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePreferListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdatePreferListResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeletePreferList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="recId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeletePreferListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeletePreferListResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPreference">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="optionNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="optionContent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPreferenceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddPreferenceResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveAllDealer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveAllDealerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveAllDealerResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteDealer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="recId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteDealerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteDealerResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertDealer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="emailID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dealerCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dealerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="teamCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="atsLogin" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="enable" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="crossGroup" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="supervisior" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="modifiedUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dealerEmailID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertDealerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertDealerResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDealer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="recId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emailID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dealerCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dealerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="teamCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="atsLogin" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="enable" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="crossGroup" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="supervisior" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="modifiedUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originalDealerCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originalUserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dealerEmailID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDealerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateDealerResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveDealerByCriteria">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="emailID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dealerCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dealerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="teamCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="atsLogin" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="enable" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="crossGroup" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="supervisior" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dealerEmailID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveDealerByCriteriaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveDealerByCriteriaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveCrossTeamDealer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dealerCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dealerTeam" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="crossTeam" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveCrossTeamDealerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveCrossTeamDealerResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrepareForCrossTeamSetup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrepareForCrossTeamSetupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrepareForCrossTeamSetupResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertCrossTeamDealer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dealerCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="crossTeam" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="modifiedUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertCrossTeamDealerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertCrossTeamDealerResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteCrossTeamDealer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dealerCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteCrossTeamDealerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteCrossTeamDealerResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCrossTeamDealer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dealerCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="crossTeam" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="modifiedUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCrossTeamDealerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateCrossTeamDealerResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveClientShortKey">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shortKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveClientShortKeyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveClientShortKeyResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertClientShortKey">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shortKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertClientShortKeyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertClientShortKeyResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteClientShortKey">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteClientShortKeyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteClientShortKeyResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveAllLeads">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveAllLeadsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveAllLeadsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteLeads">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="leadId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dealerCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteLeadsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteLeadsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertLeads">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LeadID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LeadName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LeadNRIC" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LeadMobile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LeadHome" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LeadGender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LeadEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LeadEvent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="teamCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dealerCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inputType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertLeadsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertLeadsResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MoveToLeadArchive">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="syncType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCondition" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MoveToLeadArchiveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MoveToLeadArchiveResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LeadsDataSync">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="syncType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCondition" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LeadsDataSyncResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LeadsDataSyncResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateLeads">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LeadID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LeadName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LeadNRIC" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LeadMobile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LeadHome" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LeadGender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LeadEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LeadEvent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="teamCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dealerCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateLeadsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateLeadsResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveLeadsByCriteria">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="leadName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="leadNRIC" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="leadMobile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="leadHome" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="leadGender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="leadEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="teamCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dealerCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dealerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveLeadsByCriteriaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveLeadsByCriteriaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveMaxLeadsID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveMaxLeadsIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveMaxLeadsIDResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckExistingLead">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LeadName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LeadMobile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LeadNRIC" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckExistingLeadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckExistingLeadResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveExistingLeadsInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LeadName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LeadNRIC" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveExistingLeadsInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveExistingLeadsInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RetrieveCoreClientListSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveCoreClientList" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveCoreClientListSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveCoreClientListResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddCoreClientSoapIn">
+    <wsdl:part name="parameters" element="tns:AddCoreClient" />
+  </wsdl:message>
+  <wsdl:message name="AddCoreClientSoapOut">
+    <wsdl:part name="parameters" element="tns:AddCoreClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCoreClientSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteCoreClient" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCoreClientSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteCoreClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrievePerferListSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrievePerferList" />
+  </wsdl:message>
+  <wsdl:message name="RetrievePerferListSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrievePerferListResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePreferListSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePreferList" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePreferListSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePreferListResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeletePreferListSoapIn">
+    <wsdl:part name="parameters" element="tns:DeletePreferList" />
+  </wsdl:message>
+  <wsdl:message name="DeletePreferListSoapOut">
+    <wsdl:part name="parameters" element="tns:DeletePreferListResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddPreferenceSoapIn">
+    <wsdl:part name="parameters" element="tns:AddPreference" />
+  </wsdl:message>
+  <wsdl:message name="AddPreferenceSoapOut">
+    <wsdl:part name="parameters" element="tns:AddPreferenceResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveAllDealerSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveAllDealer" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveAllDealerSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveAllDealerResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDealerSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteDealer" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDealerSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteDealerResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertDealerSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertDealer" />
+  </wsdl:message>
+  <wsdl:message name="InsertDealerSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertDealerResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDealerSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateDealer" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDealerSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateDealerResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveDealerByCriteriaSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveDealerByCriteria" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveDealerByCriteriaSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveDealerByCriteriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveCrossTeamDealerSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveCrossTeamDealer" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveCrossTeamDealerSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveCrossTeamDealerResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrepareForCrossTeamSetupSoapIn">
+    <wsdl:part name="parameters" element="tns:PrepareForCrossTeamSetup" />
+  </wsdl:message>
+  <wsdl:message name="PrepareForCrossTeamSetupSoapOut">
+    <wsdl:part name="parameters" element="tns:PrepareForCrossTeamSetupResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertCrossTeamDealerSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertCrossTeamDealer" />
+  </wsdl:message>
+  <wsdl:message name="InsertCrossTeamDealerSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertCrossTeamDealerResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCrossTeamDealerSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteCrossTeamDealer" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCrossTeamDealerSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteCrossTeamDealerResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCrossTeamDealerSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateCrossTeamDealer" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCrossTeamDealerSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateCrossTeamDealerResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveClientShortKeySoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveClientShortKey" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveClientShortKeySoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveClientShortKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertClientShortKeySoapIn">
+    <wsdl:part name="parameters" element="tns:InsertClientShortKey" />
+  </wsdl:message>
+  <wsdl:message name="InsertClientShortKeySoapOut">
+    <wsdl:part name="parameters" element="tns:InsertClientShortKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteClientShortKeySoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteClientShortKey" />
+  </wsdl:message>
+  <wsdl:message name="DeleteClientShortKeySoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteClientShortKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveAllLeadsSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveAllLeads" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveAllLeadsSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveAllLeadsResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteLeadsSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteLeads" />
+  </wsdl:message>
+  <wsdl:message name="DeleteLeadsSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteLeadsResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertLeadsSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertLeads" />
+  </wsdl:message>
+  <wsdl:message name="InsertLeadsSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertLeadsResponse" />
+  </wsdl:message>
+  <wsdl:message name="MoveToLeadArchiveSoapIn">
+    <wsdl:part name="parameters" element="tns:MoveToLeadArchive" />
+  </wsdl:message>
+  <wsdl:message name="MoveToLeadArchiveSoapOut">
+    <wsdl:part name="parameters" element="tns:MoveToLeadArchiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="LeadsDataSyncSoapIn">
+    <wsdl:part name="parameters" element="tns:LeadsDataSync" />
+  </wsdl:message>
+  <wsdl:message name="LeadsDataSyncSoapOut">
+    <wsdl:part name="parameters" element="tns:LeadsDataSyncResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateLeadsSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateLeads" />
+  </wsdl:message>
+  <wsdl:message name="UpdateLeadsSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateLeadsResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveLeadsByCriteriaSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveLeadsByCriteria" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveLeadsByCriteriaSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveLeadsByCriteriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveMaxLeadsIDSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveMaxLeadsID" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveMaxLeadsIDSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveMaxLeadsIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckExistingLeadSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckExistingLead" />
+  </wsdl:message>
+  <wsdl:message name="CheckExistingLeadSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckExistingLeadResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveExistingLeadsInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveExistingLeadsInfo" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveExistingLeadsInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveExistingLeadsInfoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SPMSetupSoap">
+    <wsdl:operation name="RetrieveCoreClientList">
+      <wsdl:input message="tns:RetrieveCoreClientListSoapIn" />
+      <wsdl:output message="tns:RetrieveCoreClientListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCoreClient">
+      <wsdl:input message="tns:AddCoreClientSoapIn" />
+      <wsdl:output message="tns:AddCoreClientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCoreClient">
+      <wsdl:input message="tns:DeleteCoreClientSoapIn" />
+      <wsdl:output message="tns:DeleteCoreClientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrievePerferList">
+      <wsdl:input message="tns:RetrievePerferListSoapIn" />
+      <wsdl:output message="tns:RetrievePerferListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePreferList">
+      <wsdl:input message="tns:UpdatePreferListSoapIn" />
+      <wsdl:output message="tns:UpdatePreferListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePreferList">
+      <wsdl:input message="tns:DeletePreferListSoapIn" />
+      <wsdl:output message="tns:DeletePreferListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPreference">
+      <wsdl:input message="tns:AddPreferenceSoapIn" />
+      <wsdl:output message="tns:AddPreferenceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAllDealer">
+      <wsdl:input message="tns:RetrieveAllDealerSoapIn" />
+      <wsdl:output message="tns:RetrieveAllDealerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDealer">
+      <wsdl:input message="tns:DeleteDealerSoapIn" />
+      <wsdl:output message="tns:DeleteDealerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertDealer">
+      <wsdl:input message="tns:InsertDealerSoapIn" />
+      <wsdl:output message="tns:InsertDealerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDealer">
+      <wsdl:input message="tns:UpdateDealerSoapIn" />
+      <wsdl:output message="tns:UpdateDealerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveDealerByCriteria">
+      <wsdl:input message="tns:RetrieveDealerByCriteriaSoapIn" />
+      <wsdl:output message="tns:RetrieveDealerByCriteriaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveCrossTeamDealer">
+      <wsdl:input message="tns:RetrieveCrossTeamDealerSoapIn" />
+      <wsdl:output message="tns:RetrieveCrossTeamDealerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrepareForCrossTeamSetup">
+      <wsdl:input message="tns:PrepareForCrossTeamSetupSoapIn" />
+      <wsdl:output message="tns:PrepareForCrossTeamSetupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCrossTeamDealer">
+      <wsdl:input message="tns:InsertCrossTeamDealerSoapIn" />
+      <wsdl:output message="tns:InsertCrossTeamDealerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCrossTeamDealer">
+      <wsdl:input message="tns:DeleteCrossTeamDealerSoapIn" />
+      <wsdl:output message="tns:DeleteCrossTeamDealerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCrossTeamDealer">
+      <wsdl:input message="tns:UpdateCrossTeamDealerSoapIn" />
+      <wsdl:output message="tns:UpdateCrossTeamDealerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveClientShortKey">
+      <wsdl:input message="tns:RetrieveClientShortKeySoapIn" />
+      <wsdl:output message="tns:RetrieveClientShortKeySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertClientShortKey">
+      <wsdl:input message="tns:InsertClientShortKeySoapIn" />
+      <wsdl:output message="tns:InsertClientShortKeySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteClientShortKey">
+      <wsdl:input message="tns:DeleteClientShortKeySoapIn" />
+      <wsdl:output message="tns:DeleteClientShortKeySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAllLeads">
+      <wsdl:input message="tns:RetrieveAllLeadsSoapIn" />
+      <wsdl:output message="tns:RetrieveAllLeadsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLeads">
+      <wsdl:input message="tns:DeleteLeadsSoapIn" />
+      <wsdl:output message="tns:DeleteLeadsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertLeads">
+      <wsdl:input message="tns:InsertLeadsSoapIn" />
+      <wsdl:output message="tns:InsertLeadsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MoveToLeadArchive">
+      <wsdl:input message="tns:MoveToLeadArchiveSoapIn" />
+      <wsdl:output message="tns:MoveToLeadArchiveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LeadsDataSync">
+      <wsdl:input message="tns:LeadsDataSyncSoapIn" />
+      <wsdl:output message="tns:LeadsDataSyncSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLeads">
+      <wsdl:input message="tns:UpdateLeadsSoapIn" />
+      <wsdl:output message="tns:UpdateLeadsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveLeadsByCriteria">
+      <wsdl:input message="tns:RetrieveLeadsByCriteriaSoapIn" />
+      <wsdl:output message="tns:RetrieveLeadsByCriteriaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveMaxLeadsID">
+      <wsdl:input message="tns:RetrieveMaxLeadsIDSoapIn" />
+      <wsdl:output message="tns:RetrieveMaxLeadsIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckExistingLead">
+      <wsdl:input message="tns:CheckExistingLeadSoapIn" />
+      <wsdl:output message="tns:CheckExistingLeadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveExistingLeadsInfo">
+      <wsdl:input message="tns:RetrieveExistingLeadsInfoSoapIn" />
+      <wsdl:output message="tns:RetrieveExistingLeadsInfoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SPMSetupSoap" type="tns:SPMSetupSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RetrieveCoreClientList">
+      <soap:operation soapAction="http://tempuri.org/RetrieveCoreClientList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCoreClient">
+      <soap:operation soapAction="http://tempuri.org/AddCoreClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCoreClient">
+      <soap:operation soapAction="http://tempuri.org/DeleteCoreClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrievePerferList">
+      <soap:operation soapAction="http://tempuri.org/RetrievePerferList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePreferList">
+      <soap:operation soapAction="http://tempuri.org/UpdatePreferList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePreferList">
+      <soap:operation soapAction="http://tempuri.org/DeletePreferList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPreference">
+      <soap:operation soapAction="http://tempuri.org/AddPreference" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAllDealer">
+      <soap:operation soapAction="http://tempuri.org/RetrieveAllDealer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDealer">
+      <soap:operation soapAction="http://tempuri.org/DeleteDealer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertDealer">
+      <soap:operation soapAction="http://tempuri.org/InsertDealer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDealer">
+      <soap:operation soapAction="http://tempuri.org/UpdateDealer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveDealerByCriteria">
+      <soap:operation soapAction="http://tempuri.org/RetrieveDealerByCriteria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveCrossTeamDealer">
+      <soap:operation soapAction="http://tempuri.org/RetrieveCrossTeamDealer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrepareForCrossTeamSetup">
+      <soap:operation soapAction="http://tempuri.org/PrepareForCrossTeamSetup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCrossTeamDealer">
+      <soap:operation soapAction="http://tempuri.org/InsertCrossTeamDealer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCrossTeamDealer">
+      <soap:operation soapAction="http://tempuri.org/DeleteCrossTeamDealer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCrossTeamDealer">
+      <soap:operation soapAction="http://tempuri.org/UpdateCrossTeamDealer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveClientShortKey">
+      <soap:operation soapAction="http://tempuri.org/RetrieveClientShortKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertClientShortKey">
+      <soap:operation soapAction="http://tempuri.org/InsertClientShortKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteClientShortKey">
+      <soap:operation soapAction="http://tempuri.org/DeleteClientShortKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAllLeads">
+      <soap:operation soapAction="http://tempuri.org/RetrieveAllLeads" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLeads">
+      <soap:operation soapAction="http://tempuri.org/DeleteLeads" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertLeads">
+      <soap:operation soapAction="http://tempuri.org/InsertLeads" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MoveToLeadArchive">
+      <soap:operation soapAction="http://tempuri.org/MoveToLeadArchive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LeadsDataSync">
+      <soap:operation soapAction="http://tempuri.org/LeadsDataSync" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLeads">
+      <soap:operation soapAction="http://tempuri.org/UpdateLeads" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveLeadsByCriteria">
+      <soap:operation soapAction="http://tempuri.org/RetrieveLeadsByCriteria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveMaxLeadsID">
+      <soap:operation soapAction="http://tempuri.org/RetrieveMaxLeadsID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckExistingLead">
+      <soap:operation soapAction="http://tempuri.org/CheckExistingLead" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveExistingLeadsInfo">
+      <soap:operation soapAction="http://tempuri.org/RetrieveExistingLeadsInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SPMSetupSoap12" type="tns:SPMSetupSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RetrieveCoreClientList">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveCoreClientList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCoreClient">
+      <soap12:operation soapAction="http://tempuri.org/AddCoreClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCoreClient">
+      <soap12:operation soapAction="http://tempuri.org/DeleteCoreClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrievePerferList">
+      <soap12:operation soapAction="http://tempuri.org/RetrievePerferList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePreferList">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePreferList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePreferList">
+      <soap12:operation soapAction="http://tempuri.org/DeletePreferList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPreference">
+      <soap12:operation soapAction="http://tempuri.org/AddPreference" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAllDealer">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveAllDealer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDealer">
+      <soap12:operation soapAction="http://tempuri.org/DeleteDealer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertDealer">
+      <soap12:operation soapAction="http://tempuri.org/InsertDealer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDealer">
+      <soap12:operation soapAction="http://tempuri.org/UpdateDealer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveDealerByCriteria">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveDealerByCriteria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveCrossTeamDealer">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveCrossTeamDealer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrepareForCrossTeamSetup">
+      <soap12:operation soapAction="http://tempuri.org/PrepareForCrossTeamSetup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCrossTeamDealer">
+      <soap12:operation soapAction="http://tempuri.org/InsertCrossTeamDealer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCrossTeamDealer">
+      <soap12:operation soapAction="http://tempuri.org/DeleteCrossTeamDealer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCrossTeamDealer">
+      <soap12:operation soapAction="http://tempuri.org/UpdateCrossTeamDealer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveClientShortKey">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveClientShortKey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertClientShortKey">
+      <soap12:operation soapAction="http://tempuri.org/InsertClientShortKey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteClientShortKey">
+      <soap12:operation soapAction="http://tempuri.org/DeleteClientShortKey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAllLeads">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveAllLeads" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLeads">
+      <soap12:operation soapAction="http://tempuri.org/DeleteLeads" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertLeads">
+      <soap12:operation soapAction="http://tempuri.org/InsertLeads" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MoveToLeadArchive">
+      <soap12:operation soapAction="http://tempuri.org/MoveToLeadArchive" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LeadsDataSync">
+      <soap12:operation soapAction="http://tempuri.org/LeadsDataSync" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLeads">
+      <soap12:operation soapAction="http://tempuri.org/UpdateLeads" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveLeadsByCriteria">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveLeadsByCriteria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveMaxLeadsID">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveMaxLeadsID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckExistingLead">
+      <soap12:operation soapAction="http://tempuri.org/CheckExistingLead" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveExistingLeadsInfo">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveExistingLeadsInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SPMSetup">
+    <wsdl:port name="SPMSetupSoap" binding="tns:SPMSetupSoap">
+      <soap:address location="http://localhost:52599/SpmWebService/WebServices/SPMSetup.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SPMSetupSoap12" binding="tns:SPMSetupSoap12">
+      <soap12:address location="http://localhost:52599/SpmWebService/WebServices/SPMSetup.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,741 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="RetrieveUserAccessRights">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveUserAccessRightsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveUserAccessRightsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveUserMenuOptions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveUserMenuOptionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveUserMenuOptionsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveUserIdAndName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveUserIdAndNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveUserIdAndNameResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveDealerInformation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveDealerInformationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveDealerInformationResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserAccessRights">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="roleId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userAccessRightsUpdate">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="actionUserId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserAccessRightsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateUserAccessRightsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveUserRoles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveUserRolesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveUserRolesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveUserRolesByRoleId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="roleId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveUserRolesByRoleIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveUserRolesByRoleIdResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserRole">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="roleId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="roleName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="roleDes" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userRoleUpdate">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="actionUserId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserRoleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateUserRoleResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveAssignedRole">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="roleId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveAssignedRoleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveAssignedRoleResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveUserRoleRights">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="roleId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveUserRoleRightsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveUserRoleRightsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveMaxUserRoleID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveMaxUserRoleIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveMaxUserRoleIDResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveProjectByProjectName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="projName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveProjectByProjectNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveProjectByProjectNameResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveAssignedClientInfoByProj">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProjID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveAssignedClientInfoByProjResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveAssignedClientInfoByProjResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveRoleNames">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="roleName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbConnectionStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveRoleNamesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveRoleNamesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RetrieveUserAccessRightsSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveUserAccessRights" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveUserAccessRightsSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveUserAccessRightsResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveUserMenuOptionsSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveUserMenuOptions" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveUserMenuOptionsSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveUserMenuOptionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveUserIdAndNameSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveUserIdAndName" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveUserIdAndNameSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveUserIdAndNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveDealerInformationSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveDealerInformation" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveDealerInformationSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveDealerInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserAccessRightsSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateUserAccessRights" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserAccessRightsSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateUserAccessRightsResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveUserRolesSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveUserRoles" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveUserRolesSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveUserRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveUserRolesByRoleIdSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveUserRolesByRoleId" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveUserRolesByRoleIdSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveUserRolesByRoleIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserRoleSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateUserRole" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserRoleSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateUserRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveAssignedRoleSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveAssignedRole" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveAssignedRoleSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveAssignedRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveUserRoleRightsSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveUserRoleRights" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveUserRoleRightsSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveUserRoleRightsResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveMaxUserRoleIDSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveMaxUserRoleID" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveMaxUserRoleIDSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveMaxUserRoleIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveProjectByProjectNameSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveProjectByProjectName" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveProjectByProjectNameSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveProjectByProjectNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveAssignedClientInfoByProjSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveAssignedClientInfoByProj" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveAssignedClientInfoByProjSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveAssignedClientInfoByProjResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveRoleNamesSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveRoleNames" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveRoleNamesSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveRoleNamesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="AccessManagementServiceSoap">
+    <wsdl:operation name="RetrieveUserAccessRights">
+      <wsdl:input message="tns:RetrieveUserAccessRightsSoapIn" />
+      <wsdl:output message="tns:RetrieveUserAccessRightsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveUserMenuOptions">
+      <wsdl:input message="tns:RetrieveUserMenuOptionsSoapIn" />
+      <wsdl:output message="tns:RetrieveUserMenuOptionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveUserIdAndName">
+      <wsdl:input message="tns:RetrieveUserIdAndNameSoapIn" />
+      <wsdl:output message="tns:RetrieveUserIdAndNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveDealerInformation">
+      <wsdl:input message="tns:RetrieveDealerInformationSoapIn" />
+      <wsdl:output message="tns:RetrieveDealerInformationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserAccessRights">
+      <wsdl:input message="tns:UpdateUserAccessRightsSoapIn" />
+      <wsdl:output message="tns:UpdateUserAccessRightsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveUserRoles">
+      <wsdl:input message="tns:RetrieveUserRolesSoapIn" />
+      <wsdl:output message="tns:RetrieveUserRolesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveUserRolesByRoleId">
+      <wsdl:input message="tns:RetrieveUserRolesByRoleIdSoapIn" />
+      <wsdl:output message="tns:RetrieveUserRolesByRoleIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserRole">
+      <wsdl:input message="tns:UpdateUserRoleSoapIn" />
+      <wsdl:output message="tns:UpdateUserRoleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAssignedRole">
+      <wsdl:input message="tns:RetrieveAssignedRoleSoapIn" />
+      <wsdl:output message="tns:RetrieveAssignedRoleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveUserRoleRights">
+      <wsdl:input message="tns:RetrieveUserRoleRightsSoapIn" />
+      <wsdl:output message="tns:RetrieveUserRoleRightsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveMaxUserRoleID">
+      <wsdl:input message="tns:RetrieveMaxUserRoleIDSoapIn" />
+      <wsdl:output message="tns:RetrieveMaxUserRoleIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveProjectByProjectName">
+      <wsdl:input message="tns:RetrieveProjectByProjectNameSoapIn" />
+      <wsdl:output message="tns:RetrieveProjectByProjectNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAssignedClientInfoByProj">
+      <wsdl:input message="tns:RetrieveAssignedClientInfoByProjSoapIn" />
+      <wsdl:output message="tns:RetrieveAssignedClientInfoByProjSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveRoleNames">
+      <wsdl:input message="tns:RetrieveRoleNamesSoapIn" />
+      <wsdl:output message="tns:RetrieveRoleNamesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AccessManagementServiceSoap" type="tns:AccessManagementServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RetrieveUserAccessRights">
+      <soap:operation soapAction="http://tempuri.org/RetrieveUserAccessRights" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveUserMenuOptions">
+      <soap:operation soapAction="http://tempuri.org/RetrieveUserMenuOptions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveUserIdAndName">
+      <soap:operation soapAction="http://tempuri.org/RetrieveUserIdAndName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveDealerInformation">
+      <soap:operation soapAction="http://tempuri.org/RetrieveDealerInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserAccessRights">
+      <soap:operation soapAction="http://tempuri.org/UpdateUserAccessRights" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveUserRoles">
+      <soap:operation soapAction="http://tempuri.org/RetrieveUserRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveUserRolesByRoleId">
+      <soap:operation soapAction="http://tempuri.org/RetrieveUserRolesByRoleId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserRole">
+      <soap:operation soapAction="http://tempuri.org/UpdateUserRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAssignedRole">
+      <soap:operation soapAction="http://tempuri.org/RetrieveAssignedRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveUserRoleRights">
+      <soap:operation soapAction="http://tempuri.org/RetrieveUserRoleRights" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveMaxUserRoleID">
+      <soap:operation soapAction="http://tempuri.org/RetrieveMaxUserRoleID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveProjectByProjectName">
+      <soap:operation soapAction="http://tempuri.org/RetrieveProjectByProjectName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAssignedClientInfoByProj">
+      <soap:operation soapAction="http://tempuri.org/RetrieveAssignedClientInfoByProj" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveRoleNames">
+      <soap:operation soapAction="http://tempuri.org/RetrieveRoleNames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AccessManagementServiceSoap12" type="tns:AccessManagementServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RetrieveUserAccessRights">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveUserAccessRights" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveUserMenuOptions">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveUserMenuOptions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveUserIdAndName">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveUserIdAndName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveDealerInformation">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveDealerInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserAccessRights">
+      <soap12:operation soapAction="http://tempuri.org/UpdateUserAccessRights" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveUserRoles">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveUserRoles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveUserRolesByRoleId">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveUserRolesByRoleId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserRole">
+      <soap12:operation soapAction="http://tempuri.org/UpdateUserRole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAssignedRole">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveAssignedRole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveUserRoleRights">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveUserRoleRights" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveMaxUserRoleID">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveMaxUserRoleID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveProjectByProjectName">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveProjectByProjectName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAssignedClientInfoByProj">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveAssignedClientInfoByProj" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveRoleNames">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveRoleNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AccessManagementService">
+    <wsdl:port name="AccessManagementServiceSoap" binding="tns:AccessManagementServiceSoap">
+      <soap:address location="http://localhost:52599/SpmWebService/WebServices/AccessManagementService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AccessManagementServiceSoap12" binding="tns:AccessManagementServiceSoap12">
+      <soap12:address location="http://localhost:52599/SpmWebService/WebServices/AccessManagementService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

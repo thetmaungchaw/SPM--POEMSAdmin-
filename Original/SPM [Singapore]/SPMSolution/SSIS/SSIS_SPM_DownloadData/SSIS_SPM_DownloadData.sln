@@ -1,0 +1,17 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{D183A3D8-5FD8-494B-B014-37F57B35E655}") = "SSIS_SPM_DownloadData", "SSIS_SPM_DownloadData\SSIS_SPM_DownloadData.dtproj", "{1F88D583-7AB5-4EA5-B157-9CB61FAA4A9B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1F88D583-7AB5-4EA5-B157-9CB61FAA4A9B}.Development|Default.ActiveCfg = Development
+		{1F88D583-7AB5-4EA5-B157-9CB61FAA4A9B}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

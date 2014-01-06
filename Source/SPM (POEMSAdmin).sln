@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Web
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CQ.SPM", "http://localhost:2126", "{44C54CB2-B958-4AD7-B49B-A2D3861BC6D6}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		ProjectReferences = "{42bc18de-396f-4e2f-8c2f-ffd283607756}|CQ.SPM.BusinessLogic.dll;{C636E2F3-3933-4684-A124-922766254AAA}|CQ.SPM.Common.dll;{FE5FA3BB-9637-4975-9AB6-E7A7FF9F531D}|CQ.SPM.DataAccess.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_2126"
+		Debug.AspNetCompiler.PhysicalPath = "CQ.SPM\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_2126\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_2126"
+		Release.AspNetCompiler.PhysicalPath = "CQ.SPM\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_2126\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "CQ.SPM\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQ.SPM.BusinessLogic", "CQ.SPM.BusinessLogic\CQ.SPM.BusinessLogic.csproj", "{42BC18DE-396F-4E2F-8C2F-FFD283607756}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQ.SPM.Common", "CQ.SPM.Common\CQ.SPM.Common.csproj", "{C636E2F3-3933-4684-A124-922766254AAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQ.SPM.DataAccess", "CQ.SPM.DataAccess\CQ.SPM.DataAccess.csproj", "{FE5FA3BB-9637-4975-9AB6-E7A7FF9F531D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQ.SPM.BusinessLogic.Test", "CQ.SPM.BusinessLogic.Test\CQ.SPM.BusinessLogic.Test.csproj", "{6DB8F042-6E9A-4810-97B9-BD7726C14FA7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{44C54CB2-B958-4AD7-B49B-A2D3861BC6D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44C54CB2-B958-4AD7-B49B-A2D3861BC6D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44C54CB2-B958-4AD7-B49B-A2D3861BC6D6}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{44C54CB2-B958-4AD7-B49B-A2D3861BC6D6}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{42BC18DE-396F-4E2F-8C2F-FFD283607756}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42BC18DE-396F-4E2F-8C2F-FFD283607756}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42BC18DE-396F-4E2F-8C2F-FFD283607756}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42BC18DE-396F-4E2F-8C2F-FFD283607756}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C636E2F3-3933-4684-A124-922766254AAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C636E2F3-3933-4684-A124-922766254AAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C636E2F3-3933-4684-A124-922766254AAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C636E2F3-3933-4684-A124-922766254AAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE5FA3BB-9637-4975-9AB6-E7A7FF9F531D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE5FA3BB-9637-4975-9AB6-E7A7FF9F531D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE5FA3BB-9637-4975-9AB6-E7A7FF9F531D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE5FA3BB-9637-4975-9AB6-E7A7FF9F531D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DB8F042-6E9A-4810-97B9-BD7726C14FA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DB8F042-6E9A-4810-97B9-BD7726C14FA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DB8F042-6E9A-4810-97B9-BD7726C14FA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DB8F042-6E9A-4810-97B9-BD7726C14FA7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

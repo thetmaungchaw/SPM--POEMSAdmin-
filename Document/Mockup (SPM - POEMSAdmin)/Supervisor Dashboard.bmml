@@ -1,0 +1,42 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1024" measuredH="768" mockupW="1024" mockupH="768">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="0" y="0" w="1024" h="768" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>SPM%20Phase%20IV%0Ahttp%3A//SPMPhase4/SupervisorDashboard.aspx</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::ColumnChart" x="646" y="124" w="344" h="322" measuredW="187" measuredH="175" zOrder="1" locked="false" isInGroup="-1"/>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::Label" x="31" y="124" w="88" h="-1" measuredW="81" measuredH="21" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Project%20Name</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::TextInput" x="127" y="121" w="262" h="-1" measuredW="95" measuredH="27" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Autocomplete</text>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::DataGrid" x="31" y="169" w="570" h="195" measuredW="406" measuredH="21" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Project%20Name%2C%20Assigned%20Clients%2C%20Assigned%20Leads%2C%20Cut%20Off%20Date</text>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::DataGrid" x="31" y="468" w="570" h="195" measuredW="406" measuredH="21" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Project%20Name%2C%20Assigned%20Clients%2C%20Assigned%20Leads%2C%20Cut%20Off%20Date</text>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::Label" x="31" y="432" w="222" h="-1" measuredW="208" measuredH="21" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Commission%20earned%20for%20this%20project</text>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::Link" x="949" y="79" w="-1" h="-1" measuredW="63" measuredH="19" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>MainMenu_Assignment%26bm%3BMainMenu_Assignment.bmml%26bm%3BMainMenu_Assignment.bmml%26bm%3BMainMenu_Assignment.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22949%2C79%2C1012%2C98%22%20href%3D%22MainMenu_Assignment.bmml%22%20alt%3D%22MainMenu_Assignment%22%20id%3D%227%22/%3E</map>
+        <text>Main%20Menu</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

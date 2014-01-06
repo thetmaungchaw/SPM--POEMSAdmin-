@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="false">
+  <TopNode>[0-1003]C:\OC\Project\SPM Phase IV (POEMSAdmin)\Source\CQ.SPM.BusinessLogic.Test\bin\Debug\CQ.SPM.BusinessLogic.Test.dll</TopNode>
+  <SelectedNode>[0-1007]CQ.SPM.BusinessLogic.Test</SelectedNode>
+  <ExcludeCategories>false</ExcludeCategories>
+  <Nodes>
+    <Node UniqueName="[0-1003]C:\OC\Project\SPM Phase IV (POEMSAdmin)\Source\CQ.SPM.BusinessLogic.Test\bin\Debug\CQ.SPM.BusinessLogic.Test.dll" Expanded="true" />
+    <Node UniqueName="[0-1004]CQ" Expanded="true" />
+    <Node UniqueName="[0-1005]CQ.SPM" Expanded="true" />
+    <Node UniqueName="[0-1006]CQ.SPM.BusinessLogic" Expanded="true" />
+    <Node UniqueName="[0-1007]CQ.SPM.BusinessLogic.Test" Expanded="true" />
+    <Node UniqueName="[0-1000]CQ.SPM.BusinessLogic.Test.TestClass" Expanded="true" />
+    <Node UniqueName="[0-1001]CQ.SPM.BusinessLogic.Test.TestClass.DealerDetail_Combine" Expanded="true" />
+  </Nodes>
+</VisualState>
